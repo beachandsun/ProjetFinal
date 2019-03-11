@@ -11,7 +11,7 @@ class CreatePlaces < ActiveRecord::Migration[5.2]
       t.boolean :access_handi
       t.string :vibe
       t.boolean :vegan
-
+      t.belongs_to :address, index: true
       t.timestamps
     end
   end
