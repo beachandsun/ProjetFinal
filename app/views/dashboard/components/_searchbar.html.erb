@@ -1,0 +1,84 @@
+<%= form_tag( '/search', class: "form-inline mr-auto") do %>
+    <ul class="navbar-nav mr-3">
+      <li>
+        <%= link_to("#", class: "nav-link nav-link-lg", data: {toggle: :sidebar}) do %>
+          <i class="fas fa-bars"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to("#", class: "nav-link nav-link-lg d-sm-none", data: {toggle: :search}) do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      </li>
+    </ul>
+    <div class="search-element">
+      <%= text_field_tag "name", nil, placeholder: "Search", class: "form-control" %>
+      <%= button_tag class: "btn" do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+      <div class="search-backdrop"></div>
+      <div class="search-result">
+        <div class="search-header">
+          Histories
+        </div>
+        <div class="search-item">
+          <%= link_to "How to hack NASA using CSS", "#"  %>
+          <%= link_to "#", class: "search-close" do  %>
+            <i class="fas fa-times"></i>
+          <% end %>
+        </div>
+        <div class="search-item">
+          <%= link_to "Kodinger.com", "#"  %>
+          <%= link_to "#", class: "search-close" do  %>
+            <i class="fas fa-times"></i>
+          <% end %>
+        </div>
+        <div class="search-item">
+          <%= link_to "Stisla", "#"  %>
+          <%= link_to "#", class: "search-close" do  %>
+            <i class="fas fa-times"></i>
+          <% end %>
+        </div>
+        <div class="search-header">
+          Result
+        </div>
+        <div class="search-item">
+          <%= link_to "#" do %>
+              <%= image_tag "img/products/product-3-50", alt: "product", class: "mr-3 rounded", style: "width: 30px" %>
+              iPhone S9 Limited Edition
+          <% end %>
+        </div>
+        <div class="search-item">
+          <%= link_to "#" do %>
+              <%= image_tag "img/products/product-2-50", alt: "product", class: "mr-3 rounded", style: "width: 30px" %>
+            Drone X2 New Gen-7
+          <% end %>
+        </div>
+        <div class="search-item">
+          <%= link_to "#" do %>
+            <%= image_tag "img/products/product-1-50", alt: "product", class: "mr-3 rounded", style: "width: 30px" %>
+            Headphone Blitz
+          <% end %>
+        </div>
+        <div class="search-header">
+          Projects
+        </div>
+        <div class="search-item">
+          <%= link_to "#" do %>
+            <div class="search-icon bg-danger text-white mr-3">
+              <i class="fas fa-code"></i>
+            </div>
+            Stisla Admin Template
+          <% end %>
+        </div>
+        <div class="search-item">
+          <%= link_to "#" do %>
+            <div class="search-icon bg-primary text-white mr-3">
+              <i class="fas fa-laptop"></i>
+            </div>
+            Create a new Homepage Design
+         <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>

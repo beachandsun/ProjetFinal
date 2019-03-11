@@ -1,0 +1,22 @@
+<!-- Main Content -->
+<div class="main-content">
+  <section class="section">
+    <div class="row">
+        <%= render "dashboard/components/card_order"  %>
+        <%= render "dashboard/components/card_graph", id: "balance-chart", title: "Balance", amount: "187,13"  %>
+        <%= render "dashboard/components/card_graph", id: "sales-chart", title: "Sales", amount: "4,732"  %>
+    </div>
+    <div class="row">
+        <%= render "dashboard/components/card_chart_comparison"  %>
+        <%= render "dashboard/components/card_top"  %>
+    </div>
+    <div class="row">
+        <%= render 'dashboard/components/card_best_products'  %>
+        <%= render 'dashboard/components/card_top_countries'  %>
+    </div>
+    <div class="row">
+        <%= render 'dashboard/components/card_invoices'  %>
+        <%= render 'dashboard/components/card_customer_support'  %>
+    </div>
+  </section>
+</div>
