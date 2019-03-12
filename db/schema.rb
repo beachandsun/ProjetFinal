@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_11_163839) do
+
+ActiveRecord::Schema.define(version: 2019_03_11_165919) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address_number"
+    t.string "address_main"
+    t.string "address_complement_1"
+    t.string "address_complement_2"
+    t.string "city"
+    t.string "postal_code"
+    t.string "country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "places", force: :cascade do |t|
     t.string "name"
@@ -26,8 +42,10 @@ ActiveRecord::Schema.define(version: 2019_03_11_163839) do
     t.boolean "access_handi"
     t.string "vibe"
     t.boolean "vegan"
+    t.bigint "address_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_places_on_address_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,8 +62,10 @@ ActiveRecord::Schema.define(version: 2019_03_11_163839) do
     t.boolean "access_handi"
     t.string "vibe"
     t.boolean "vegan"
+    t.bigint "address_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_users_on_address_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
