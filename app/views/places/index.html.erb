@@ -1,6 +1,11 @@
 <div class="row">
 	<% Place.all.each do |place| %>
 		<h3><%= place.name %></h3>
-		<h3><%= place.description %></h3>
+		<h2><%= place.description %></h2>
+		<% if place.wifi %>
+			<p>Wifi inside</p>
+			<%else%>
+			<p>No wifi</p>
+		<%end%>
 	<%end%>
 </div>	
