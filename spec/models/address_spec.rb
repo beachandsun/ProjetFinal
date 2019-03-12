@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe address, type: :model do
+RSpec.describe Address, type: :model do
 
   before(:each) do 
     @address = FactoryBot.create(:address)    
@@ -58,7 +58,7 @@ RSpec.describe address, type: :model do
       
     describe "Address.postal_code is empty"
       before {@address.postal_code = ""}
-      {should_not be_valid}
+      it { should_not be_valid }
     end
     
     describe "Country test" do
@@ -67,6 +67,6 @@ RSpec.describe address, type: :model do
 
     describe "Address.country is empty" do 
       before {@address.country = ""}
-      {should_not be_valid}
+      it { should_not be_valid }
     end
 end
