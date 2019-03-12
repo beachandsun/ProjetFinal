@@ -15,6 +15,7 @@ RSpec.describe User, type: :model do
 
     it "is valid with valid attributes" do
       expect(@user).to be_a(User)
+      expect(@user).to be_valid
     end
 
     describe "#first_name" do
@@ -25,35 +26,30 @@ RSpec.describe User, type: :model do
       it { expect(@user).to validate_presence_of(:last_name) }
     end
 
-    describe "#username" do
-      it { expect(@user).to validate_length_of(:username).is_at_least(3) }
+    # describe "#password" do
+    #   it { expect(@user).to validate_presence_of(:password) }
+    #   it { expect(@user).to validate_length_of(:password).is_at_least(6) }
+    # end
+
+    # Test for a empty password
+    describe 'when password is not present' do
+      before {@user.password = " "}
+      it { should_not be_valid }
     end
 
-  end
-
-  context "associations" do
-
-    describe "books" do
-      it { expect(@user).to have_many(:books) }
+    # Test for a too short password
+    describe 'when password is too short' do
+      before {@user.password = "azert"}
+      it { should_not be_valid }
     end
 
-  end
-
-  context "public instance methods" do
-
-    describe "#full_name" do
-
-      it "should return a string" do
-        expect(@user.full_name).to be_a(String)
-      end
-
-      it "should return the full name" do
-        expect(@user.full_name).to eq("John Doe")
-        user_2 = create(:user, first_name: "Jean-Michel", last_name: "Durant")
-        expect(user_2.full_name).to eq("Jean-Michel Durant")
-      end
+    describe "#email" do
+      it { expect(@user).to validate_presence_of(:email) }
     end
 
+    describe 'when email is not present' do
+      before { @user.email = " " }
+      it { should_not be_valid }
+    end
   end
-
 end
