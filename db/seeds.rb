@@ -11,7 +11,7 @@ puts "Delete all"
 Address.destroy_all
 User.destroy_all
 Place.destroy_all
-puts "clen done"
+puts "Clean done"
 
 puts "Create addresses"
 10.times do
@@ -21,12 +21,12 @@ puts "Adresses created"
 
 puts "Create users"
 5.times do
-	user = User.create(email: Faker::Internet.free_email, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: "motdepasse", wifi: [true, false].sample, price: [true, false].sample, e_outlet: [true, false].sample, access_handi: [true, false].sample, vibe: ["cozy", "chic", "chill", "lounge"].sample, vegan: [true, false].sample, address_id: rand(User.all.first.id..User.all.last.id))
+	user = User.create(email: Faker::Internet.free_email, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: "motdepasse", wifi: [true, false].sample, price: [true, false].sample, e_outlet: [true, false].sample, access_handi: [true, false].sample, vibe: ["cozy", "chic", "chill", "lounge"].sample, vegan: [true, false].sample, address_id: rand(Address.all.first.id..Address.all.last.id))
 	end
 puts "Users created"	
 
 puts "Create places"
 5.times do
-		place = Place.create(name: Faker::Artist.name,description: Faker::Movies::HarryPotter.quote, phone_number: Faker::PhoneNumber.cell_phone, wifi: [true, false].sample, price: [true, false].sample, e_outlet: [true, false].sample, access_handi: [true, false].sample, vibe: ["cozy", "chic", "chill", "lounge"].sample, vegan: [true, false].sample, address_id: rand(User.all.first.id..User.all.last.id))
+		place = Place.create(name: Faker::Artist.name,description: Faker::Movies::HarryPotter.quote, phone_number: 0456748394, wifi: [true, false].sample, price: [true, false].sample, e_outlet: [true, false].sample, access_handi: [true, false].sample, vibe: ["cozy", "chic", "chill", "lounge"].sample, vegan: [true, false].sample, address_id: rand(Address.all.first.id..Address.all.last.id))
 	end
 puts "Places created"		
