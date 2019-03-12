@@ -1,54 +1,57 @@
 require 'rails_helper'
 
-RSpec.describe TonModel, type: :model do
+RSpec.describe User, type: :model do
 
   before(:each) do 
-  # en général, tu as envie de créer une nouvelle instance
-  @user = User.create(first_name: "John", last_name: "Doe", username: "johndoe")
+    @user = FactoryBot.create(:user)    
   end
 
+  it "has a valid factory" do
+    # teste toujours tes factories pour voir si elles sont valides
+    expect(build(:user)).to be_valid
+  end
 
-
-  context "validations" do
+  context "validation" do
 
     it "is valid with valid attributes" do
-      # création qui est valide
+      expect(@user).to be_a(User)
     end
 
-    describe "#some_attribute" do
-      # teste cet attribut, en fonction de la validation que tu lui as donnée
+    describe "#first_name" do
+      it { expect(@user).to validate_presence_of(:first_name) }
+    end
+
+    describe "#last_name" do
+      it { expect(@user).to validate_presence_of(:last_name) }
+    end
+
+    describe "#username" do
+      it { expect(@user).to validate_length_of(:username).is_at_least(3) }
     end
 
   end
 
   context "associations" do
 
-    describe "some association" do
-      # teste cette association
-    end
-
-  end
-
-  context "callbacks" do
-
-    describe "some callbacks" do
-      # teste ce callback
+    describe "books" do
+      it { expect(@user).to have_many(:books) }
     end
 
   end
 
   context "public instance methods" do
 
-    describe "#some_method" do
-      # teste cette méthode
-    end
+    describe "#full_name" do
 
-  end
+      it "should return a string" do
+        expect(@user.full_name).to be_a(String)
+      end
 
-  context "public class methods" do
-
-    describe "self.some_method" do
-      # teste cette méthode
+      it "should return the full name" do
+        expect(@user.full_name).to eq("John Doe")
+        user_2 = create(:user, first_name: "Jean-Michel", last_name: "Durant")
+        expect(user_2.full_name).to eq("Jean-Michel Durant")
+      end
     end
 
   end

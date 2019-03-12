@@ -6,3 +6,4 @@ FactoryBot.define do
     username { Faker::Internet.username }
   end
 end
+
