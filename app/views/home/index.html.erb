@@ -312,11 +312,13 @@
             <div class="portfolio-wrap">
               <img src="../assets/img/portfolio/app1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4><a href="#">App 1</a></h4>
-                <p>App</p>
+                <h4><a href="#"><%= Place.all.first.name %></a></h4>
+                <p><%= Place.all.first.description %></p>
                 <div>
                   <a href="../assets/img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-                  <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                  <%if Place.all.first.wifi%>
+                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                  <%end%>
                 </div>
               </div>
             </div>
