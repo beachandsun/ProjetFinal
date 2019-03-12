@@ -1,0 +1,15 @@
+<h1>Page Profil</h1>
+
+<p>Bienvenue sur la page d'ajout d'un avatar pour le User portant l'id : <%=@place.id%></p>
+<h3>Avatar actuel</h3>
+<%if @place.pictures.attached?%>
+  <%= image_tag @place.pictures, alt: 'picture' %>
+<%else%>
+  <p>=== Il n'y a pas encore d'avatar lié à cet endroit ===</p>
+<%end%>
+
+<h3>Changer de picture ?</h3>
+<%= form_tag place_pictures_path(@place), multipart: true do %>
+  <%= file_field_tag :pictures %>
+  <%= submit_tag "mettre à jour" %>
+<% end %>
