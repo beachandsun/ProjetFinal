@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'places/index'
+  get 'places/new'
+  get 'places/create'
+  get 'places/update'
   devise_for :users
   root 'home#index'
   get 'dashboard', to: "dashboard#index"
