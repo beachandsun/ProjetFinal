@@ -1,6 +1,7 @@
 class Place < ApplicationRecord
-    belongs_to :address
-    validates :name, presence: true
+
+  belongs_to :address
+  validates :name, presence: true
 	validates :description, presence: true
 	validates :address_id, presence: true
 

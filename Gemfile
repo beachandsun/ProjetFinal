@@ -64,9 +64,19 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'stripe'
+
 group :development, :test do
-gem 'rspec'
-gem 'pry-rails'
-gem 'faker'
-gem 'sidekick'
+  gem 'rspec-rails'
+  gem 'pry-rails'
+  gem 'faker'
+  gem 'sidekick'
+  gem 'factory_bot_rails'
 end
+
+group :test do
+  gem 'shoulda-matchers', '4.0.0.rc1'
+  gem 'rails-controller-testing' # If you are using Rails 5.x
+  gem 'nyan-cat-formatter'
+end
+
+gem 'byebug' 
