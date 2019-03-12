@@ -12,7 +12,12 @@ class PlacesController < ApplicationController
 
   end
 
-  def update
+  def show
+  end
 
+  def update
+  end
+
+  def delete
   end
 end
