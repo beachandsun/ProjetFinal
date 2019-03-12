@@ -33,7 +33,7 @@ RSpec.describe User, type: :model do
 
     # Test for a empty password
     describe 'when password is not present' do
-      before {@user.password = " "}
+      before {@user.password = ""}
       it { should_not be_valid }
     end
 
