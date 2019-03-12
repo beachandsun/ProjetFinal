@@ -1,8 +1,18 @@
 class PlacesController < ApplicationController
-  def create
+  before_action :authenticate_user!
+  def index
+
   end
 
-  def read
+  def new
+
+  end
+
+  def create
+
+  end
+
+  def show
   end
 
   def update
