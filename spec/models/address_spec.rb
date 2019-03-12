@@ -14,7 +14,8 @@ RSpec.describe Address, type: :model do
   context "validation" do
 
     it "is valid with valid attributes" do
-      expect(@address).to be_a(address)
+      @address.postal_code = "34000"
+      expect(@address).to be_a(Address)
       expect(@address).to be_valid
     end
 
