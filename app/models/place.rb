@@ -3,5 +3,5 @@ class Place < ApplicationRecord
 	validates :description, presence: true
 	validates :address_id, presence: true
 
-    validates :field, inclusion: { in: [ true, false ] } 
+  validates :vibe, inclusion: { in: %w(hip_hop classic exotique lounge electronique pop) } 
 end
