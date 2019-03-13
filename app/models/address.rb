@@ -13,4 +13,9 @@ after_validation :geocode
     validates :country, :format => { with: /\A[a-zA-Z]+\z/ }
     validates :city, :format => { with: /\A[a-zA-Z]+\z/ }
     validates :address_number, :format => { with: /\A[0-9]+\z/ }
+
+    def address
+        [address_number, address_main, city, postal_code, country].compact.join(', ')
+      end
+
 end
