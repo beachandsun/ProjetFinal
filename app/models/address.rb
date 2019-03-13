@@ -1,4 +1,6 @@
 class Address < ApplicationRecord
+    geocoded_by :address
+after_validation :geocode
     has_one :user
     has_one :place
     validates :address_number, presence: true
