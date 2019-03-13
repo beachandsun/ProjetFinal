@@ -4,7 +4,7 @@
 <h3>Avatar actuel</h3>
 <%if @place.pictures.attached?%>
   <%@place.pictures.each do |pic|%>
-    <%= image_tag @place.pictures, alt: 'picture' %>
+    <%= image_tag pic, alt: 'picture' %>
   <%end%>
 <%else%>
   <p>=== Il n'y a pas encore d'avatar lié à cet endroit ===</p>
