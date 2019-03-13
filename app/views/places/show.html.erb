@@ -1,0 +1,21 @@
+<h1>Page Profil</h1>
+
+<p>Bienvenue sur la page d'ajout d'un avatar pour le User portant l'id : <%=@place.id%></p>
+<h3>Avatar actuel</h3>
+<%if @place.pictures.attached?%>
+  <%@place.pictures.each do |pic|%>
+    <%= image_tag pic, alt: 'picture' %>
+  <%end%>
+<%else%>
+
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{current_address.latitude},#{current_address.longitude}&key=#{ENV["KEY_GOOGLE_MAP"]}", alt: "Map" %>
+
+
+  <p>=== Il n'y a pas encore d'avatar lié à cet endroit ===</p>
+<%end%>
+
+<h3>Changer de picture ?</h3>
+<%= form_tag place_pictures_path(@place), multipart: true do %>
+  <%= file_field_tag :pictures, :multiple => true %>
+  <%= submit_tag "mettre à jour" %>
+<% end %>

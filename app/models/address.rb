@@ -11,9 +11,4 @@ class Address < ApplicationRecord
     validates :country, :format => { with: /\A[a-zA-Z]+\z/ }
     validates :city, :format => { with: /\A[a-zA-Z]+\z/ }
     validates :address_number, :format => { with: /\A[0-9]+\z/ }
-
-
-
-
-
 end
