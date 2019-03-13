@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
-  resources :places
+  resources :places do
+    resources :pictures, only: [:create]
+  end
   resources :users, only: [:show]
   resources :addresses
 
