@@ -71,3 +71,5 @@ group :test do
   gem 'rails-controller-testing' # If you are using Rails 5.x
   gem 'nyan-cat-formatter'
 end
+
+gem "aws-sdk-s3", require: false
