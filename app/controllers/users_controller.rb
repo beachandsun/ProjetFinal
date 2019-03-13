@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def create
   end
 
-  def read
+  def show
   end
 
   def update

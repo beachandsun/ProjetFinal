@@ -2,6 +2,8 @@ class Place < ApplicationRecord
   
   has_many_attached :pictures
   
+
+  belongs_to :address
   validates :name, presence: true
 	validates :description, presence: true
 	validates :address_id, presence: true
