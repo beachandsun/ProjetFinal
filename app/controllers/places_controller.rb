@@ -27,10 +27,5 @@ class PlacesController < ApplicationController
   end
 
 
-  private
-
-  def blog_post_params
-    params.require(:place).permit(:name, :description, :phone_number, :access, :wifi, :price, :e_outlet, :access_handi, :vibe, :vegan, :address_id, pictures: [])
-  end
 
 end
