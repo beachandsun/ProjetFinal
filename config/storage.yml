@@ -9,11 +9,11 @@ local:
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 amazon:
-   service: S3
-   access_key_id: <%= ENV['AMAZON_ACCESS_KEY_ID'] %>
-   secret_access_key: <%= ENV['AMAZON_SECRET_ACCESS_KEY'] %>
-   region: eu-west-3
-   bucket: work-koffee
+	service: S3
+	access_key_id: <%= ENV['AMAZON_ACCESS_KEY_ID'] %>
+	secret_access_key: <%= ENV['AMAZON_SECRET_ACCESS_KEY'] %>
+	region: eu-west-3 #a priori, si tu es en France, il faut mettre ici : eu-west-3
+	bucket: work-and-koffee-dev.herokuapp.com
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
