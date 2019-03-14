@@ -10,9 +10,7 @@ class User < ApplicationRecord
 
          accepts_nested_attributes_for :address
 
-         def user_address
-           super || build_address
-         end
+         
   def edit
   end
 
