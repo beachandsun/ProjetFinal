@@ -8,8 +8,8 @@
   <%end%>
 <%else%>
 
-<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{current_address.latitude},#{current_address.longitude}&key=#{ENV["KEY_GOOGLE_MAP"]}", alt: "Map" %>
 
+<%= url_map.html_safe %> 
 
   <p>=== Il n'y a pas encore d'avatar lié à cet endroit ===</p>
 <%end%>
