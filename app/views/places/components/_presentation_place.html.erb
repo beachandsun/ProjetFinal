@@ -1,0 +1,57 @@
+<div class="row about-container mb-5">
+
+	<div class="col-lg-5 content">
+
+		<div class="d-flex justify-content-around">
+
+			<div class="icon-box">
+				<div class="icon">
+					<% if @place.wifi %>
+					<i class="fas fa-wifi"></i>
+					<% else %>
+					<i class="fas fa-wifi"></i>
+					<%end%>
+				</div>
+			</div>
+
+			<% if @place.e_outlet %>
+			<div class="icon-box">
+				<div class="icon">
+					<i class="fas fa-plug"></i>
+				</div>
+			</div>
+			<%end%>
+
+			<% if @place.access_handi %>
+			<div class="icon-box">
+				<div class="icon">
+					<i class="fas fa-wheelchair"></i>
+				</div>
+			</div>
+			<%end%>
+
+		</div>
+
+		<div class="d-flex justify-content-around">
+
+			<% if @place.price %>
+			<span class="badge badge-pill badge-pill-info"><i class="fas fa-euro-sign"></i></span>
+			<%else%>
+			<span class="badge badge-pill badge-pill-info"><i class="fas fa-euro-sign"></i><i
+					class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></span>
+			<%end%>
+
+			<span class="badge badge-pill badge-pill-info"><i class="fas fa-music"></i> <%= @place.vibe %></span>
+
+			<% if @place.vegan %>
+			<span class="badge badge-pill badge-pill-info">vegan</span>
+			<%end%>
+		</div>
+
+	</div>
+
+	<div class="col-lg-7 content">
+		<p> <%= @place.description %> </p>
+	</div>
+
+</div>
