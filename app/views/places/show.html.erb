@@ -1,16 +1,11 @@
-<section id="intro" class="clearfix">
+<section id="show-header" class="clearfix">	
 	<div class="container">
 
-		<div class="intro-img">
-			<img src="../assets/img/intro-img.svg" alt="" class="img-fluid">
-		</div>
-
-		<div class="intro-info">
+		<div class="header-info">
 			<h2><%=@place.name%></h2>
 
 			<div>
-				<a href="#about" class="btn-get-started scrollto">Reserver</a>
-				<a href="#services" class="btn-services scrollto">en savoir plus</a>
+				<a href="#" class="btn-fav scrollto"><i class="fas fa-heart"></i> Ajouter aux favoris</a>
 			</div>
 		</div>
 
@@ -25,87 +20,41 @@
 			<h3>Découvrir l'endroit</h3><br>
 		</header>
 
-		<div class="row about-container">
+		<div class="row about-container mb-5">
 
-			<div class="col-lg-6 content">
+			<div class="col-lg-5 content">
 
-				<div class="icon-box">
-					<div class="icon"><i class="fa fa-shopping-bag"></i></div>
-					<h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-					<p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
-						soluta nobis est eligendi</p>
-				</div>
+				<div class="d-flex justify-content-around">
 
-				<div class="icon-box">
-					<div class="icon"><i class="fas fa-camera"></i></div>
-					<h4 class="title"><a href="">Magni Dolores</a></h4>
-					<p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-						mollit anim id est laborum</p>
-				</div>
-
-				<div class="icon-box">
-					<div class="icon"><i class="fas fa-chart-bar"></i></div>
-					<h4 class="title"><a href="">Dolor Sitema</a></h4>
-					<p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat tarad limino ata</p>
-				</div>
-
-			</div>
-
-			<div class="col-lg-6 content">
-
-				<div class="icon-box">
-					<div class="icon"><i class="fa fa-shopping-bag"></i></div>
-					<h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-					<p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
-						soluta nobis est eligendi</p>
-				</div>
-
-				<div class="icon-box">
-					<div class="icon"><i class="fas fa-camera"></i></div>
-					<h4 class="title"><a href="">Magni Dolores</a></h4>
-					<p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-						mollit anim id est laborum</p>
-				</div>
-
-				<div class="icon-box">
-					<div class="icon"><i class="fas fa-chart-bar"></i></div>
-					<h4 class="title"><a href="">Dolor Sitema</a></h4>
-					<p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat tarad limino ata</p>
-				</div>
-
-			</div>
-
-		</div>
-
-	</div>
-</section>
-
-<section>
-	<div class="container">
-
-		<div class="row">
-
-			<div class="col-lg-6 content d-flex">
-				<div>
-					<% if @place.wifi %>
-						<img src="https://img.icons8.com/wired/64/000000/wifi.png">
-					<% else %>
-						<img src="https://img.icons8.com/wired/64/000000/wifi-off.png">
-					<%end%>
+					<div class="icon-box">
+						<div class="icon">
+							<% if @place.wifi %>
+							<i class="fas fa-wifi"></i>
+							<% else %>
+							<i class="fas fa-wifi"></i>
+							<%end%>
+						</div>
+					</div>
 
 					<% if @place.e_outlet %>
-					<i class="fas fa-plug"></i>
-					<%end%>
-
-					<% if @place.vegan %>
-					<span>vegan</span>
+					<div class="icon-box">
+						<div class="icon">
+							<i class="fas fa-plug"></i>
+						</div>
+					</div>
 					<%end%>
 
 					<% if @place.access_handi %>
-					<i class="fas fa-wheelchair"></i>
+					<div class="icon-box">
+						<div class="icon">
+							<i class="fas fa-wheelchair"></i>
+						</div>
+					</div>
 					<%end%>
+
+				</div>
+
+				<div class="d-flex justify-content-around">
 
 					<% if @place.price %>
 					<span class="badge badge-pill badge-primary"><i class="fas fa-euro-sign"></i></span>
@@ -113,50 +62,64 @@
 					<span class="badge badge-pill badge-primary"><i class="fas fa-euro-sign"></i><i
 							class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></span>
 					<%end%>
-					
-					<span class="badge badge-pill badge-primary"><%= @place.vibe %></span>
+
+					<span class="badge badge-pill badge-primary"><i class="fas fa-music"></i> <%= @place.vibe %></span>
+
+					<% if @place.vegan %>
+					<span class="badge badge-pill badge-primary">vegan</span>
+					<%end%>
 				</div>
 
 			</div>
 
-			<div class="col-lg-6 content">
+			<div class="col-lg-7 content">
 				<p> <%= @place.description %> </p>
 			</div>
 
 		</div>
 
-		<div class="row">
+		<div class="row mt-3">
 
 			<div class="col-lg-7 content">
 				<%= url_map.html_safe %>
 			</div>
 
-			<div class="col-lg-5 content">
-				<h3>Se rendre à <%=@place.name%> :</h3>
-				<p>0<%= @place.phone_number %></p>
+			<div class="col-lg-5 content aside-header">
+				<h4>Se rendre à <%=@place.name%> :</h4>
+				<p>Contacter l'établissement : 0<%= @place.phone_number %></p>
 				<p><%= @place.access %></p>
 			</div>
 		</div>
 
+		<div class="row w-100 mt-5 ml-4 d-flex justify-content-end">
+				<a href="#" class="btn-edit scrollto">Modifier les informations</a>
+				<a href="#" class="btn-delete scrollto">Supprimer ce lieu</a>
+		</div>
 
-		<h3>Les photos de cet endroit</h3>
-		<%if @place.pictures.attached?%>
-		<%@place.pictures.each do |pic|%>
-		<%= image_tag pic, alt: 'picture' %>
-		<%end%>
-		<%else%>
-		<p>========== Il n'y a pas encore de photos de cet endroit =========</p>
-		<p>==== Vous avez pris des photos lors de votre dernière visite ? ====</p>
-		<p>======== Postez les pour donner envie aux utilisateurs ! ========</p>
-		<%end%>
+	</div>
+</section>
 
-		<h3>Vous souhaitez ajouter des photos ?</h3>
-		<%= form_tag place_pictures_path(@place), multipart: true do %>
-		<%= file_field_tag :pictures, :multiple => true %>
-		<%= submit_tag "mettre à jour" %>
-		<% end %>
+<section>
+	<div class="container mt-4">
+		<div class="row">
+			<div>
+				<h3>Les photos de cet endroit</h3>
+				<%if @place.pictures.attached?%>
+					<%@place.pictures.each do |pic|%>
+						<%= image_tag pic, alt: 'picture' %>
+					<%end%>
+				<%else%>
+					<p>========== Il n'y a pas encore de photos de cet endroit =========</p>
+					<p>==== Vous avez pris des photos lors de votre dernière visite ? ====</p>
+					<p>======== Postez les pour donner envie aux utilisateurs ! ========</p>
+				<%end%>
 
-
-
+				<h3>Vous souhaitez ajouter des photos ?</h3>
+				<%= form_tag place_pictures_path(@place), multipart: true do %>
+				<%= file_field_tag :pictures, :multiple => true %>
+				<%= submit_tag "mettre à jour" %>
+				<% end %>
+			</div>
+		</div>
 	</div>
 </section>
