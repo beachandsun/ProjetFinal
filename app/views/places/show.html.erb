@@ -1,11 +1,11 @@
 <section id="show-header" class="clearfix">	
 	<div class="container">
 
-		<div class="header-info">
+		<div class="header-info text-right">
 			<h2><%=@place.name%></h2>
 
 			<div>
-				<a href="#" class="btn-fav scrollto"><i class="fas fa-heart"></i> Ajouter aux favoris</a>
+				<a href="#" class="btn-fav float-right scrollto"><i class="fas fa-heart"></i> Ajouter aux favoris</a>
 			</div>
 		</div>
 
@@ -57,16 +57,16 @@
 				<div class="d-flex justify-content-around">
 
 					<% if @place.price %>
-					<span class="badge badge-pill badge-primary"><i class="fas fa-euro-sign"></i></span>
+					<span class="badge badge-pill badge-pill-info"><i class="fas fa-euro-sign"></i></span>
 					<%else%>
-					<span class="badge badge-pill badge-primary"><i class="fas fa-euro-sign"></i><i
+					<span class="badge badge-pill badge-pill-info"><i class="fas fa-euro-sign"></i><i
 							class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></span>
 					<%end%>
 
-					<span class="badge badge-pill badge-primary"><i class="fas fa-music"></i> <%= @place.vibe %></span>
+					<span class="badge badge-pill badge-pill-info"><i class="fas fa-music"></i> <%= @place.vibe %></span>
 
 					<% if @place.vegan %>
-					<span class="badge badge-pill badge-primary">vegan</span>
+					<span class="badge badge-pill badge-pill-info">vegan</span>
 					<%end%>
 				</div>
 

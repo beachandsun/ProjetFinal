@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// PLACES#SHOW //
+
+//HEADER
 #show-header {
   width: 100%;
   position: relative;
@@ -12,7 +16,14 @@
 
 .header-info {
   width: 50%;
-  float: left;
+  float: right;
+}
+
+.header-info h2 {
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 48px;
+  font-weight: 700;
 }
 
 .btn-fav {
@@ -25,7 +36,7 @@
   border-radius: 50px;
   transition: 0.5s;
   margin: 0 20px 20px 0;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
   border: 2px solid #b61251;
   color: #b61251;
 }
@@ -36,8 +47,28 @@
   color: #fff;
 }
 
+
+//SECTION DESCRIPTION
+
+.badge-pill-info {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .8px !important;
+  display: inline-block;
+  padding: 10px 20px !important;
+  border-radius: 30px;
+  margin: 2px 5px;
+  border: 2px solid ;
+  background-color: #007bff;
+  color: #fff;
+}
+
+
+//SECTION MAP
+
 .aside-header h4{
-  font-size: 32px;
+  font-size: 28px;
   color: #283d50;
   text-align: center;
   font-weight: 500;
