@@ -1,17 +1,4 @@
-<section id="show-header" class="clearfix">	
-	<div class="container">
-
-		<div class="header-info text-right">
-			<h2><%=@place.name%></h2>
-
-			<div>
-				<a href="#" class="btn-fav float-right scrollto"><i class="fas fa-heart"></i> Ajouter aux favoris</a>
-			</div>
-		</div>
-
-	</div>
-</section><!-- #intro -->
-
+    <%= render "places/components/header_place_show"  %>
 
 <section id="about">
 	<div class="container">
@@ -20,76 +7,9 @@
 			<h3>Découvrir l'endroit</h3><br>
 		</header>
 
-		<div class="row about-container mb-5">
+    <%= render "places/components/presentation_place"  %>
 
-			<div class="col-lg-5 content">
-
-				<div class="d-flex justify-content-around">
-
-					<div class="icon-box">
-						<div class="icon">
-							<% if @place.wifi %>
-							<i class="fas fa-wifi"></i>
-							<% else %>
-							<i class="fas fa-wifi"></i>
-							<%end%>
-						</div>
-					</div>
-
-					<% if @place.e_outlet %>
-					<div class="icon-box">
-						<div class="icon">
-							<i class="fas fa-plug"></i>
-						</div>
-					</div>
-					<%end%>
-
-					<% if @place.access_handi %>
-					<div class="icon-box">
-						<div class="icon">
-							<i class="fas fa-wheelchair"></i>
-						</div>
-					</div>
-					<%end%>
-
-				</div>
-
-				<div class="d-flex justify-content-around">
-
-					<% if @place.price %>
-					<span class="badge badge-pill badge-pill-info"><i class="fas fa-euro-sign"></i></span>
-					<%else%>
-					<span class="badge badge-pill badge-pill-info"><i class="fas fa-euro-sign"></i><i
-							class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></span>
-					<%end%>
-
-					<span class="badge badge-pill badge-pill-info"><i class="fas fa-music"></i> <%= @place.vibe %></span>
-
-					<% if @place.vegan %>
-					<span class="badge badge-pill badge-pill-info">vegan</span>
-					<%end%>
-				</div>
-
-			</div>
-
-			<div class="col-lg-7 content">
-				<p> <%= @place.description %> </p>
-			</div>
-
-		</div>
-
-		<div class="row mt-3">
-
-			<div class="col-lg-7 content">
-				<%= url_map.html_safe %>
-			</div>
-
-			<div class="col-lg-5 content aside-header">
-				<h4>Se rendre à <%=@place.name%> :</h4>
-				<p>Contacter l'établissement : 0<%= @place.phone_number %></p>
-				<p><%= @place.access %></p>
-			</div>
-		</div>
+    <%= render "places/components/location_place"  %>
 
 		<div class="row w-100 mt-5 ml-4 d-flex justify-content-end">
 				<a href="#" class="btn-edit scrollto">Modifier les informations</a>
@@ -125,26 +45,5 @@
 	</div>
 </section> -->
 
-<!-- COMMENTS WITH DISQUS -->
-<section class="px-3">
-  <div id="disqus_thread"></div>
-</section>
-<script>
 
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-var disqus_config = function () {
-this.page.url = request.original_url;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = request.original_url; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://work-and-koffee.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<%= render "places/components/comments"  %>
