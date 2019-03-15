@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.5'
 #gem 'rb-readline'
 gem 'dotenv-rails'
 gem 'devise'
-
+gem 'byebug'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
