@@ -90,23 +90,30 @@
 			<div class="col-lg-6 content d-flex">
 				<div>
 					<% if @place.wifi %>
-					<i class="fas fa-wifi"></i>
+						<img src="https://img.icons8.com/wired/64/000000/wifi.png">
+					<% else %>
+						<img src="https://img.icons8.com/wired/64/000000/wifi-off.png">
 					<%end%>
+
 					<% if @place.e_outlet %>
 					<i class="fas fa-plug"></i>
 					<%end%>
+
 					<% if @place.vegan %>
 					<span>vegan</span>
 					<%end%>
+
 					<% if @place.access_handi %>
 					<i class="fas fa-wheelchair"></i>
 					<%end%>
+
 					<% if @place.price %>
 					<span class="badge badge-pill badge-primary"><i class="fas fa-euro-sign"></i></span>
 					<%else%>
 					<span class="badge badge-pill badge-primary"><i class="fas fa-euro-sign"></i><i
 							class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></span>
 					<%end%>
+					
 					<span class="badge badge-pill badge-primary"><%= @place.vibe %></span>
 				</div>
 
