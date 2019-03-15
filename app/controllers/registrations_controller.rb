@@ -8,7 +8,6 @@ class RegistrationsController < Devise::RegistrationsController
       super
       address = Address.new
       self.resource.address_id = address.id
-      byebug
 
     end
 
