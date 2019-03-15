@@ -1,7 +1,7 @@
 module PlacesHelper
 
     def url_map
-        url= "<iframe width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"
+        url= "<iframe width=\"100%\" height=\"350\" frameborder=\"0\" style=\"border:0\"
         src=\"https://www.google.com/maps/embed/v1/place?key=#{ENV['KEY_GOOGLE_MAP']}&q=#{current_address.latitude},#{current_address.longitude}\" allowfullscreen></iframe>"
     end
 
