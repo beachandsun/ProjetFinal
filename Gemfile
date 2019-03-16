@@ -72,4 +72,6 @@ group :test do
   gem 'nyan-cat-formatter'
 end
 
-gem "aws-sdk-s3", require: false
+#gem "aws-sdk-s3", require: false
+gem 'aws-sdk', '~> 3' 
+gem 'faker'

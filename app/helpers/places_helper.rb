@@ -6,7 +6,7 @@ module PlacesHelper
     end
 
     private 
-    
+   
     def current_place
         Place.find(params[:id])
     end
