@@ -79,8 +79,9 @@
 
 <h3> Address </h3>
 
- <%= f.fields_for :user_address do |user_address_form| %>
+ <%= f.fields_for :address_attributes do |user_address_form| %>
  <%= user_address_form.text_field :address_number, class: "form-control", placeholder: "Address_number" %>
+ <%= user_address_form.text_field :address_main, class: "form-control", placeholder: "Address_main" %>
  <%= user_address_form.text_field :address_complement_1, class: "form-control", placeholder: "Address_complement_1" %>
  <%= user_address_form.text_field :address_complement_2, class: "form-control", placeholder: "Address_complement_2" %>
  <%= user_address_form.text_field :city, class: "form-control", placeholder: "City" %>
