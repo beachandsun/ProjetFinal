@@ -2,8 +2,7 @@ class UsersController < ApplicationController
 
   def create
     
-    Address.create(address_number: "6")
-    super
+  
   end
 
   def show

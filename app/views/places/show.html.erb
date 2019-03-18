@@ -1,3 +1,4 @@
+
     <%= render "places/components/header_place_show"  %>
 
 <section id="about">
@@ -42,3 +43,26 @@
 
 
 <%= render "places/components/comments"  %>
+
+<h1><%=@place.name%></h1>
+<h3>Les photos de cet endroit</h3>
+<%if @place.pictures.attached?%>
+  <%@place.pictures.each do |pic|%>
+    <%= image_tag pic, alt: 'picture' %>
+  <%end%>
+<%else%>
+
+<%= url_map.html_safe %> 
+  <p>=== Il n'y a pas encore d'avatar lié à cet endroit ===</p>
+
+  <p>========== Il n'y a pas encore de photos de cet endroit =========</p>
+  <p>=== Vous avez pris des photos lors de votre dernière visite ? ===</p>
+  <p>======== Postez les pour donner envie aux utilisateurs ! ========</p>
+<%end%>
+
+<h3>Vous souhaitez ajouter des photos ?</h3>
+<%= form_tag place_pictures_path(@place), multipart: true do %>
+  <%= file_field_tag :pictures, :multiple => true %>
+  <%= submit_tag "mettre à jour" %>
+<% end %>
+
