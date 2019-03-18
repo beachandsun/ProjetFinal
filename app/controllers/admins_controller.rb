@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   layout "dashboard"
-  before_action :deny_access, :unless => :user_is_admin
+  before_action :user_is_admin, :unless => :user_is_admin
   action :index
 
 
@@ -14,8 +14,10 @@ class AdminsController < ApplicationController
 
   private
   def user_is_admin
-    if current_user.admin == false
-      puts "tu n'es pas admin"
+    if current_user.admin?
+      puts "L'utilisateur est admin"
+    else
+      puts "l'utilisateur est un lambda"
       redirect_to root_path
     end
   end
