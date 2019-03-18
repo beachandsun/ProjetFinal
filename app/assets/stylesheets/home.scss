@@ -1,3 +1,175 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// PLACES#SHOW //
+
+//HEADER
+#show-header {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  padding: 0;
+}
+
+.header-info {
+  width: 50%;
+  float: right;
+  position: absolute;
+  top: 70%;
+  right: 2%;
+  z-index: 3;
+}
+
+.header-info h2 {
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.header-btn {
+  width: 100%;
+  margin-left: 4rem;
+  display: flex;
+  justify-content: end;
+}
+
+.btn-fav {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 0 20px 20px 0;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid #b61251;
+  color: #b61251;
+}
+
+.btn-fav:hover {
+  background: #b61251;
+  border: 2px solid #b61251;
+  color: #fff;
+}
+
+.btn-edit,
+.btn-delete {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 0 20px 20px 0;
+}
+
+.btn-edit {
+  background: #18b466;
+  border: 2px solid #18b466;
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background: none;
+  border-color: #18b466;
+  color: #18b466;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.btn-delete {
+  background: #b42a18;
+  border: 2px solid #b42a18;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background: none;
+  border-color: #b42a18;
+  color: #b42a18;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+
+//SECTION DESCRIPTION
+
+.icons-box {
+  background: #fff;
+  background-size: cover;
+  padding: 0 0 30px 0;
+}
+
+.icons-box .icon,
+.icons-box .icon-false {
+  float: left;
+  background: #fff;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.icons-box .icon {
+  border: 2px solid #007bff;
+}
+
+.icons-box .icon i {
+  color: #007bff;
+  font-size: 24px;
+}
+
+.icon-false {
+  border: 2px solid #c4c4c4;
+}
+
+.icons-box .icon-false i {
+  color: #c4c4c4;
+  font-size: 24px;
+}
+
+
+.badge-pill-info,
+.badge-pill-false {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .8px !important;
+  display: inline-block;
+  padding: 10px 20px !important;
+  border-radius: 30px;
+  margin: 2px 5px;
+  border: 2px solid ;
+  color: #fff;
+}
+
+.badge-pill-info {
+  background-color: #007bff;
+}
+
+.badge-pill-false {
+  background-color: #c4c4c4;
+}
+
+//SECTION MAP
+
+.aside-header h4{
+  margin-top: 2rem;
+  font-size: 28px;
+  color: #283d50;
+  text-align: center;
+  font-weight: 500;
+}
+.aside-header p{
+  padding: 10px 26px 10px 26px;
+  color: #556877;
+}
