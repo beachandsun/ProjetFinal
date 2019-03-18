@@ -8,15 +8,18 @@
 //HEADER
 #show-header {
   width: 100%;
+  height: 50%;
   position: relative;
-  background: url(asset-path("coffee-shop.jpg")) center bottom no-repeat;
-  background-size: cover;
-  padding: 200px 0 120px 0;
+  padding: 0;
 }
 
 .header-info {
   width: 50%;
   float: right;
+  position: absolute;
+  top: 70%;
+  right: 2%;
+  z-index: 3;
 }
 
 .header-info h2 {
@@ -24,6 +27,14 @@
   margin-bottom: 40px;
   font-size: 48px;
   font-weight: 700;
+}
+
+.header-btn {
+  width: 100;
+  margin-top: 5rem;
+  margin-left: 4rem;
+  display: flex;
+  justify-content: end;
 }
 
 .btn-fav {
