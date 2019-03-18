@@ -1,48 +1,54 @@
-<div class="row about-container mb-5">
+<div class="row about-container mb-3">
 
-	<div class="col-lg-7 content">
+	<div class="col-lg-7 content mb-4">
 		<p> <%= @place.description %> </p>
 	</div>
 
-	<div class="col-lg-5 content">
+	<div class="col-lg-5 content mb-3">
 
 		<div class="d-flex justify-content-around">
 
-			<div class="icon-box">
+			<div class="icons-box">
+				<% if @place.wifi %>
 				<div class="icon">
-					<% if @place.wifi %>
 					<i class="fas fa-wifi"></i>
-					<% else %>
-					<i class="fas fa-wifi"></i>
-					<% end %>
 				</div>
+				<% else %>
+				<div class="icon-false">
+					<i class="fas fa-wifi"></i>
+				</div>
+				<% end %>
 			</div>
 
-			<div class="icon-box">
+			<div class="icons-box">
+				<% if @place.e_outlet %>
 				<div class="icon">
-					<% if @place.e_outlet %>
 					<i class="fas fa-plug"></i>
-					<% else %>
-					<i class="fas fa-plug"></i>
-					<% end %>
 				</div>
+				<% else %>
+				<div class="icon-false">
+					<i class="fas fa-plug"></i>
+				</div>
+				<% end %>
 			</div>
 
-			<div class="icon-box">
-				<div class="icon">
-					<% if @place.access_handi %>
-					<i class="fas fa-wheelchair"></i>
-					<% else %>
-					<i class="fas fa-wheelchair"></i>
-					<% end %>
-				</div>
+			<div class="icons-box">
+				<% if @place.access_handi %>
+					<div class="icon">
+						<i class="fas fa-wheelchair"></i>
+					</div>
+				<% else %>
+					<div class="icon-false">
+						<i class="fas fa-wheelchair"></i>
+					</div>
+				<% end %>
 			</div>
 
 		</div>
 
 		<div class="d-flex justify-content-around">
 
-			<% if @place.price %>
+			<% if !@place.price %>
 			<span class="badge badge-pill badge-pill-info"><i class="fas fa-euro-sign"></i></span>
 			<% else %>
 			<span class="badge badge-pill badge-pill-info"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></span>
@@ -53,7 +59,7 @@
 			<% if @place.vegan %>
 			<span class="badge badge-pill badge-pill-info">vegan</span>
 			<% else %>
-			<span class="badge badge-pill badge-pill-info">vegan</span>
+			<span class="badge badge-pill badge-pill-false">vegan</span>
 			<% end %>
 		</div>
 
