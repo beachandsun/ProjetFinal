@@ -1,17 +1,33 @@
-<% @places.each do |place| %>
-  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    <div class="portfolio-wrap">
-      <img src="../assets/img/portfolio/app1.jpg" class="img-fluid" alt="">
-      <div class="portfolio-info">
-        <h4><%= link_to place.name, place_path(place.id) %></a></h4>
-        <p><%= place.description %></p>
-        <div>
-          <a href="../assets/img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-          <% if place.wifi %>
-            <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-          <% end %>
+<!--<div class="row portfolio-container matches">
+  <% @places.each do |place| %>
+    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+      <div class="portfolio-wrap">
+        <img src="../assets/img/portfolio/app1.jpg" class="img-fluid" alt="">
+        <div class="portfolio-infos">
+          <h4><%= link_to place.name, place_path(place.id) %></a></h4>
+          <p><%= place.description %></p>
+          <div>
+            <a href="../assets/img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+            <% if place.wifi %>
+              <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>-->
+
+<div class="row matches">
+  <% @places.each do |place| %>
+    <div class="col-lg-4 col-md-6 portfolio-item">
+      <div class="portfolio-wrap">
+        <img src="../assets/img/portfolio/app1.jpg" class="img-fluid" alt="">
+        <div class="portfolio-infos">
+          <h4><%= link_to place.name, place_path(place.id) %></a></h4>
+          <p><%= place.description %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
