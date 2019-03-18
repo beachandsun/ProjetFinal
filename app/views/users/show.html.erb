@@ -2,6 +2,11 @@
 
 <h1>Your profile :</h1>
 
+	<% if current_user.admin? %>
+	<div class="row w-100 mt-5 ml-4 d-flex justify-content-end">
+			<a href="#" class="btn-edit scrollto">Admin ? Viens donc voir ton dashboard</a>
+	</div>
+	<% end %>
 <p>First_name : <%= current_user.first_name %></p>
 <p>Last_name : <%= current_user.last_name %></p>
 <p>Email : <%= current_user.email %></p>
