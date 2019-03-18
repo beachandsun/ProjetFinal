@@ -20,10 +20,10 @@
 
 <div class="row matches">
   <% @places.each do |place| %>
-    <div class="col-lg-4 col-md-6 portfolio-item">
+    <div class="col-lg-4 col-md-6 matches-item">
       <div class="portfolio-wrap">
         <img src="../assets/img/portfolio/app1.jpg" class="img-fluid" alt="">
-        <div class="portfolio-infos">
+        <div class="place-infos">
           <h4><%= link_to place.name, place_path(place.id) %></a></h4>
           <p><%= place.description %></p>
         </div>
