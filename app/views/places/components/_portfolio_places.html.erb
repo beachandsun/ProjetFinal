@@ -16,18 +16,36 @@
       </div>
     </div>
   <% end %>
-</div>-->
+</div>
 
 <div class="row matches">
   <% @places.each do |place| %>
-    <div class="col-lg-4 col-md-6 matches-item">
-      <div class="portfolio-wrap">
-        <img src="../assets/img/portfolio/app1.jpg" class="img-fluid" alt="">
-        <div class="place-infos">
-          <h4><%= link_to place.name, place_path(place.id) %></a></h4>
-          <p><%= place.description %></p>
-        </div>
+  <div class="col-lg-4 col-md-6 matches-item">
+    <div class="portfolio-wrap">
+      <%= image_tag "coffee-shop.jpg", class:"d-block w-100 img-fluid" %>
+      <div class="place-infos">
+        <h4><%= link_to place.name, place_path(place.id) %></a></h4>
+        <p><%= place.description %></p>
       </div>
     </div>
+  </div>
+  <% end %>
+</div> -->
+
+
+<div class="row matches">
+  <% @places.each do |place| %>
+  <div class="col-lg-4 col-md-6 matches-item">
+    <div class="card text-white">
+      <%= image_tag "coffee-shop.jpg", class:"d-block w-100 card-bg-img" %>
+      <div class="place-infos">
+        <div>
+          <h5 class="card-title">Card title</h5>
+			    <span class="badge badge-pill badge-pill-info"><i class="fas fa-music"></i> electronique</span>
+        </div>
+        <span><i class="fas fa-wifi"></i><i class="fas fa-plug"></i></span>
+      </div>
+    </div>
+  </div>
   <% end %>
 </div>
