@@ -10,12 +10,18 @@
     <%= render "places/components/presentation_place"  %>
 
     <%= render "places/components/location_place"  %>
+		<% if current_user.admin? %>
+		<div class="row w-100 mt-5 ml-4 d-flex justify-content-end">
+				<a href="#" class="btn-edit scrollto">Modifier les informations</a>
+				<a href="#" class="btn-delete scrollto">Supprimer ce lieu</a>
+		</div>
+		<% end %>
 
 	</div>
 </section>
 
 <!-- UTILISER LE CODE POUR AFFICHER LES IMAGES LIEES AU LIEU -->
-<!-- <section>
+<section>
 	<div class="container mt-4">
 		<div class="row">
 			<div>
@@ -38,7 +44,7 @@
 			</div>
 		</div>
 	</div>
-</section> -->
+</section>
 
 
 <%= render "places/components/comments"  %>

@@ -23,8 +23,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'table_print'
-gem 'rb-readline'
+#gem 'rb-readline'
 gem 'dotenv-rails'
 gem 'devise'
 gem 'byebug'
@@ -73,3 +72,6 @@ group :test do
 end
 
 gem "aws-sdk-s3", require: false
+gem 'aws-sdk', '~> 3' 
+gem 'faker'
+gem 'table_print'

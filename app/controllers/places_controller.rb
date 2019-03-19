@@ -14,6 +14,8 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
   end
 
+  
+
   def update
     @place = Place.find(params[:id])
     if @place.update(params.require(:place).permit(:content))
