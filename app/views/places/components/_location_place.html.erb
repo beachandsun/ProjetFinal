@@ -1,0 +1,11 @@
+<div class="row mt-3">
+  <div class="col-lg-7 content">
+    <%= url_map.html_safe %>
+  </div>
+
+  <div class="col-lg-5 content aside-header pt-3">
+    <h4>Se rendre à <%=@place.name%> :</h4>
+    <p>Contacter l'établissement : 0<%= @place.phone_number %></p>
+    <p>Accès : <%= @place.access %></p>
+  </div>
+</div>

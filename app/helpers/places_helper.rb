@@ -3,7 +3,7 @@ module PlacesHelper
     public
 
     def url_map
-        url= "<iframe width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"
+        url= "<iframe width=\"100%\" height=\"350\" frameborder=\"0\" style=\"border:0\"
         src=\"https://www.google.com/maps/embed/v1/place?key=#{ENV['KEY_GOOGLE_MAP']}&q=#{current_address.latitude},#{current_address.longitude}\" allowfullscreen></iframe>"
     end
 
@@ -22,12 +22,14 @@ module PlacesHelper
         sort_by_distance(@tmp_places)
       end
     
-      
+      def placeCloser
+        sort_by_distance(@all_places)
+        @all_places.first
+      end
     
       private
     
       def sort_by_distance(array_of_places)
-        puts "XXX" * 50
         array_of_places.sort_by{ |place| address_of_place(place).bearing_from(address_of_user(current_user))}
       end
     
@@ -70,10 +72,7 @@ module PlacesHelper
                 delete_place_from_array(place, @tmp_places)
             end
           end
-        
-
         end
-        
         return nil
       end
     
@@ -103,11 +102,7 @@ module PlacesHelper
             if (@tmp_places.length > 3)
                 delete_place_from_array(place, @tmp_places)
             end
-          puts place
-
           end
-          puts place
-
         end
         return nil
       end
