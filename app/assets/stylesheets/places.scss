@@ -48,10 +48,6 @@
   justify-content: space-between;
 }
 
-.place-infos i {
-  margin-left: 2rem;
-}
-
 .place-infos .badge-pill-info {
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
@@ -63,7 +59,36 @@
 }
 
 .place-infos .badge-pill-info {
-  background-color: rgba(70, 50, 185, 0.5);
+  background-color: rgba(70, 50, 185, 0.8);
+}
+
+.place-infos .icons-box {
+  background: none;
+  background-size: cover;
+  margin: 0 0 0 1rem;
+}
+
+.place-infos .icons-box .icon,
+.place-infos .icons-box .icon-false {
+  float: left;
+  background: rgba(255, 255, 255, 0.8);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.place-infos .icons-box .icon {
+  border: 2px solid #007bff;
+}
+
+.place-infos .icons-box .icon i {
+  color: #007bff;
+  font-size: 18px;
 }
 
 
