@@ -9,7 +9,7 @@
 #show-header {
   width: 100%;
   height: 50%;
-  position: relative;
+  
   padding: 0;
 }
 
@@ -22,6 +22,23 @@
   z-index: 3;
 }
 
+.header-info-landing {
+  width: 70%;
+  float: left;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  z-index: 3;
+}
+
+.header-info-landing h2 {
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 100px;
+  font-weight: 700;
+  font-size: 6vw;
+}
+
 .header-info h2 {
   color: #fff;
   margin-bottom: 40px;
@@ -29,12 +46,13 @@
   font-weight: 700;
 }
 
-.header-btn {
-  width: 100;
-  margin-top: 5rem;
-  margin-left: 4rem;
+.header-btn-landing {
   display: flex;
-  justify-content: end;
+  position: absolute;
+  z-index: 3;
+	font-size: 6vw;
+  top: 60%;
+  left: 12%;
 }
 
 .btn-fav {
@@ -52,12 +70,33 @@
   color: #b61251;
 }
 
+.btn-fav-landing {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 80px;
+  border-radius: 60px;
+  transition: 0.5s;
+  margin: 0 20px 20px 0;
+  background: #b61251;
+  border: 2px solid #b61251;
+  color: #fff;
+  font-size: 2vw;
+}
+
 .btn-fav:hover {
   background: #b61251;
   border: 2px solid #b61251;
   color: #fff;
 }
 
+.btn-fav-landing:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid #b61251;
+  color: #b61251;
+}
 
 //SECTION DESCRIPTION
 
@@ -125,4 +164,19 @@
   background: none;
   border-color: #556877;
   color: #556877;
+}
+
+#carousel-section .carousel-inner {
+	width: 100%;
+  min-width: 100%;
+  height: 725px;
+  max-height: 800px;
+  min-height: 100px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+#footer {
+	min-height: 80px;
+	background-color: #2E4A5F !important;
 }

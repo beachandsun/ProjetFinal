@@ -23,26 +23,26 @@
   </header> <!-- #header -->
 
   
-<section class="clearfix">  
+<section id="carousel-section">  
   <div id="show-header">
 
-    <div class="header-info text-right">
+    <div class="header-info-landing text-left img-fluid">
       <h2>Décrouvrez les plus beaux endroits de Montpellier</h2>
-      <div class="row header-btn">
-          <li><%=link_to "S'inscrire", new_user_registration_path, class:'btn-fav scrollto' %></li>
-      </div>
+    </div>  
+    <div class="row header-btn-landing">
+      <btn><%=link_to "S'inscrire", new_user_registration_path, class:'btn-fav-landing scrollto' %></btn>
     </div>
 
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= image_tag "coffee-shop.jpg", class:"d-block w-100" %>
+          <%= image_tag "coffee-shop.jpg" %>
         </div>
         <div class="carousel-item">
-          <%= image_tag "coffee-shop.jpg", class:"d-block w-100" %>
+          <%= image_tag "coffee-shop.jpg" %>
         </div>
         <div class="carousel-item">
-          <%= image_tag "coffee-shop.jpg", class:"d-block w-100" %>
+          <%= image_tag "coffee-shop.jpg" %>
         </div>
       </div>
     </div>
@@ -61,7 +61,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>NewBiz</strong>. All Rights Reserved
+        &copy; TASTE THE RAINBOW
       </div>
       <div class="credits">
         <!--
@@ -70,7 +70,7 @@
           Licensing information: https://bootstrapmade.com/license/
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
         -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        
       </div>
     </div>
   </footer><!-- #footer -->
