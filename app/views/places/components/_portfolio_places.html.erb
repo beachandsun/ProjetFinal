@@ -1,23 +1,4 @@
-<!--<div class="row portfolio-container matches">
-  <% @places.each do |place| %>
-    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-      <div class="portfolio-wrap">
-        <img src="../assets/img/portfolio/app1.jpg" class="img-fluid" alt="">
-        <div class="portfolio-infos">
-          <h4><%= link_to place.name, place_path(place.id) %></a></h4>
-          <p><%= place.description %></p>
-          <div>
-            <a href="../assets/img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-            <% if place.wifi %>
-              <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
-
+<!--
 <div class="row matches">
   <% @places.each do |place| %>
   <div class="col-lg-4 col-md-6 matches-item">
@@ -41,9 +22,20 @@
       <div class="place-infos">
         <div>
           <h5 class="card-title">Card title</h5>
-			    <span class="badge badge-pill badge-pill-info"><i class="fas fa-music"></i> electronique</span>
+          <span class="badge badge-pill badge-pill-info"><i class="fas fa-music"></i> electronique</span>
         </div>
-        <span><i class="fas fa-wifi"></i><i class="fas fa-plug"></i></span>
+        <div>
+          <div class="icons-box">
+            <div class="icon">
+              <i class="fas fa-wifi"></i>
+            </div>
+          </div>
+          <div class="icons-box">
+            <div class="icon">
+              <i class="fas fa-plug"></i>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
