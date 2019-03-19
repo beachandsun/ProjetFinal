@@ -1,5 +1,6 @@
 <h2>Sign up</h2>
 
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -19,13 +20,44 @@
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: "form-control"%>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: "form-control", required: ""%>
   </div>
 
 
+<div class="form-group">
+                      <div class="control-label">Vibe</div>
+                      <div class="custom-switches-stacked mt-2">
+                        <label class="custom-switch">
+                          <input type="radio" name="option" value="1" class="custom-switch-input" checked="">
+                          <span class="custom-switch-indicator"></span>
+                          <span class="custom-switch-description">Hip-hop</span>
+                        </label>
+                        <label class="custom-switch">
+                          <input type="radio" name="option" value="2" class="custom-switch-input">
+                          <span class="custom-switch-indicator"></span>
+                          <span class="custom-switch-description">Lounge2</span>
+                        </label>
+                        <label class="custom-switch">
+                          <input type="radio" name="option" value="3" class="custom-switch-input">
+                          <span class="custom-switch-indicator"></span>
+                          <span class="custom-switch-description">Classic</span>
+                        </label>
+                        <label class="custom-switch">
+                          <input type="radio" name="option" value="3" class="custom-switch-input">
+                          <span class="custom-switch-indicator"></span>
+                          <span class="custom-switch-description">Exotic</span>
+                        <label class="custom-switch">
+                          <input type="radio" name="option" value="3" class="custom-switch-input">
+                          <span class="custom-switch-indicator"></span>
+                          <span class="custom-switch-description">Pop</span>
+                        </label>
+                        </label>
+                      </div>
+                    </div>
+
  <div>
-<%= f.label "wifi" %>
-<%= f.check_box :wifi %>
+  <%= f.label "wifi" %>
+  <%= f.check_box :wifi %>
 </div>
 <div>
 <%= f.label 'price' %>
