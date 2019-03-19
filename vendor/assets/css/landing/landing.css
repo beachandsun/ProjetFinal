@@ -767,10 +767,10 @@ h6 {
   margin: 0;
 }
 
-#portfolio .portfolio-item .portfolio-wrap:hover img {
+/*#portfolio .portfolio-item .portfolio-wrap:hover img {
   opacity: 0.4;
   transition: 0.3s;
-}
+}*/
 
 #portfolio .portfolio-item .portfolio-wrap .portfolio-info {
   position: absolute;
@@ -854,13 +854,13 @@ h6 {
   color: #fff;
 }
 
-#portfolio .portfolio-item .portfolio-wrap:hover {
+/*#portfolio .portfolio-item .portfolio-wrap:hover {
   background: #003166;
 }
 
 #portfolio .portfolio-item .portfolio-wrap:hover .portfolio-info {
   opacity: 1;
-}
+}*/
 
 /* Testimonials Section
 --------------------------------*/
