@@ -1,57 +1,69 @@
-<div class="row about-container mb-5">
+<div class="row about-container place-description mb-3">
 
-	<div class="col-lg-5 content">
+	<div class="col-lg-7 content mb-4">
+		<p> <%= @place.description %> </p>
+	</div>
+
+	<div class="col-lg-5 content mb-3">
 
 		<div class="d-flex justify-content-around">
 
-			<div class="icon-box">
+			<div class="icons-box">
+				<% if @place.wifi %>
 				<div class="icon">
-					<% if @place.wifi %>
 					<i class="fas fa-wifi"></i>
-					<% else %>
-					<i class="fas fa-wifi"></i>
-					<%end%>
 				</div>
+				<% else %>
+				<div class="icon-false">
+					<i class="fas fa-wifi"></i>
+				</div>
+				<% end %>
 			</div>
 
-			<% if @place.e_outlet %>
-			<div class="icon-box">
+			<div class="icons-box">
+				<% if @place.e_outlet %>
 				<div class="icon">
 					<i class="fas fa-plug"></i>
 				</div>
-			</div>
-			<%end%>
-
-			<% if @place.access_handi %>
-			<div class="icon-box">
-				<div class="icon">
-					<i class="fas fa-wheelchair"></i>
+				<% else %>
+				<div class="icon-false">
+					<i class="fas fa-plug"></i>
 				</div>
+				<% end %>
 			</div>
-			<%end%>
+
+			<div class="icons-box">
+				<% if @place.access_handi %>
+					<div class="icon">
+						<i class="fas fa-wheelchair"></i>
+					</div>
+				<% else %>
+					<div class="icon-false">
+						<i class="fas fa-wheelchair"></i>
+					</div>
+				<% end %>
+			</div>
 
 		</div>
 
 		<div class="d-flex justify-content-around">
 
-			<% if @place.price %>
+			<% if !@place.price %>
 			<span class="badge badge-pill badge-pill-info"><i class="fas fa-euro-sign"></i></span>
-			<%else%>
-			<span class="badge badge-pill badge-pill-info"><i class="fas fa-euro-sign"></i><i
-					class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></span>
-			<%end%>
+			<% else %>
+			<span class="badge badge-pill badge-pill-info"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></span>
+			<% end %>
 
 			<span class="badge badge-pill badge-pill-info"><i class="fas fa-music"></i> <%= @place.vibe %></span>
 
 			<% if @place.vegan %>
 			<span class="badge badge-pill badge-pill-info">vegan</span>
-			<%end%>
+			<% else %>
+			<span class="badge badge-pill badge-pill-false">vegan</span>
+			<% end %>
 		</div>
 
 	</div>
 
-	<div class="col-lg-7 content">
-		<p> <%= @place.description %> </p>
-	</div>
 
 </div>

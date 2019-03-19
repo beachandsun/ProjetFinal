@@ -1,9 +1,35 @@
 <section id="portfolio" class="clearfix">
 	<div class="container">
-		<div class="row portfolio-container">
+		<div class="row">
+			<h1>Salut <%= current_user.first_name %>!</h1>
+		</div>
 
-			<%= render "places/components/portfolio_places"  %>
+		<%= render "places/components/portfolio_places"  %>
 
+		<div class="row">
+			<h1>Les lieux de la semaine</h1>
+		</div>
+
+		<div class="row promoted-places">
+
+			<div class="col-lg-6">
+				<h3>Le plus proche</h3>
+				<div class="card bg-dark text-white">
+					<%= image_tag "coffee-shop.jpg", class:"d-block w-100 card-bg-img" %>
+					<div class="card-img-infos">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+							content.
+							This content is a little bit longer.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6">
+				<p>Le plus apprécié</p>
+				<%= image_tag "coffee-shop.jpg", class:"d-block w-100" %>
+
+			</div>
 		</div>
 	</div>
 </section>
