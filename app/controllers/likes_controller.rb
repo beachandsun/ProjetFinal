@@ -13,32 +13,23 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    if !(already_liked?)
-      flash[:notice] = "Cannot unlike"
-    else
-      @like.destroy
-    end
-    redirect_to place_like_path
+   Like.find(params[:id]).delete 
+   redirect_to place_path(@place)
   end
 
-
- private
-
- def already_liked?
+  def already_liked?
     Like.where(user_id: current_user.id, place_id:
     params[:place_id]).exists?
   end
- 
+
+ private
+
+
  def find_place
    @place = Place.find(params[:place_id])
-   puts "*" * 100
-   puts "on est dans PLACE"
-   puts params
  end
+
  def find_like
     @like = Like.find(params[:id]).place
-    puts "*" * 100
-    puts "on est dans LIKE"
-    puts params
  end
 end
