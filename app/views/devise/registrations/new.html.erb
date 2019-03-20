@@ -1,0 +1,75 @@
+<h2>Sign up</h2>
+
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+
+ <div>
+<%= f.label "wifi" %>
+<%= f.check_box :wifi %>
+</div>
+<div>
+<%= f.label 'price' %>
+<%= f.check_box :price %>
+</div>
+<div>
+<%= f.label 'e_outlet' %>
+<%= f.check_box :e_outlet%>
+</div>
+
+<div>
+<%= f.label 'access_handi' %>
+<%= f.check_box :access_handi %>
+</div>
+<h6> Vibe </h6>
+
+<div>
+<%= f.select 'vibe', ['Hip Hop', 'Lounge', 'Classic', 'Exotic', 'Pop', 'Electronic']%>
+
+
+<div>
+<%= f.label 'vegan' %>
+<%= f.check_box :vegan %>
+</div>
+
+<h3> Address </h3>
+
+ <%= f.fields_for :address_attributes do |user_address_form| %>
+ <%= user_address_form.text_field :address_number, class: "form-control", placeholder: "Address_number" %>
+ <%= user_address_form.text_field :address_main, class: "form-control", placeholder: "Address_main" %>
+ <%-#= user_address_form.text_field :address_complement_1, class: "form-control", placeholder: "Address_complement_1" -%>
+ <%-#= user_address_form.text_field :address_complement_2, class: "form-control", placeholder: "Address_complement_2" -%>
+ <%= user_address_form.text_field :city, class: "form-control", placeholder: "City" %>
+ <%= user_address_form.text_field :postal_code, class: "form-control", placeholder: "Postal_code" %>
+ <%-#= user_address_form.text_field :country, class: "form-control", placeholder: "Country" -%>
+
+<% end %>
+ 
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+
+<%= render "devise/shared/links" %>

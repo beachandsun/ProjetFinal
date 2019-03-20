@@ -1,0 +1,28 @@
+
+
+<h1>Your profile :</h1>
+
+	<% if current_user.try(:admin?) %>
+	<div class="row w-100 mt-5 ml-4 d-flex justify-content-end">
+			<a href="#" class="btn-edit scrollto">Admin ? Viens donc voir ton dashboard</a>
+	</div>
+	<% end %>
+  <%if current_user%>
+    <p>First_name : <%= current_user.first_name %></p>
+    <p>Last_name : <%= current_user.last_name %></p>
+    <p>Email : <%= current_user.email %></p>
+    <p>Wifi : <%= boolean_wifi %></p>
+    <p>Price : <%= boolean_price %></p>
+    <p>E_outlet : <%= boolean_eoutlet %></p>
+    <p>Access_handi : <%= boolean_access_handi %></p>
+    <p>Vibe : <%= current_user.vibe %></p>
+    <p>Vegan : <%= boolean_vegan %></p>
+    <%= link_to "Editer le profil", edit_user_registration_path(current_user.id) %>
+
+    <h3>Vous souhaitez ajouter des photos ?</h3>
+				<%= form_tag user_session_path(@user), multipart: true do %>
+				<%= file_field_tag :pictures, :multiple => true %>
+				<%= submit_tag "mettre à jour" %>
+        <%end%>
+  <%end%>
+
