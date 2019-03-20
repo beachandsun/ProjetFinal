@@ -23,64 +23,91 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: "form-control", required: ""%>
   </div>
 
-
+<!--- Select for vibes --->
 <div class="form-group">
-                      <div class="control-label">Vibe</div>
-                      <div class="custom-switches-stacked mt-2">
-                        <label class="custom-switch">
-                          <input type="radio" name="option" value="1" class="custom-switch-input" checked="">
-                          <span class="custom-switch-indicator"></span>
-                          <span class="custom-switch-description">Hip-hop</span>
+  <div class="control-label"><h6> Vibe </h6></div>
+    <div class="custom-switches-stacked mt-2">
+    <label class="custom-switch">
+      <input type="radio" name="option" value="1" class="custom-switch-input" checked="">
+      <span class="custom-switch-indicator"></span>
+      <span class="custom-switch-description">Hip-hop</span>
+    </label>
+    <label class="custom-switch">
+      <input type="radio" name="option" value="2" class="custom-switch-input">
+      <span class="custom-switch-indicator"></span>
+      <span class="custom-switch-description">Lounge2</span>
+    </label>
+    <label class="custom-switch">
+      <input type="radio" name="option" value="3" class="custom-switch-input">
+      <span class="custom-switch-indicator"></span>
+      <span class="custom-switch-description">Classic</span>
+    </label>
+    <label class="custom-switch">
+      <input type="radio" name="option" value="3" class="custom-switch-input">
+      <span class="custom-switch-indicator"></span>
+      <span class="custom-switch-description">Exotic</span>
+    </label>
+    <label class="custom-switch">
+      <input type="radio" name="option" value="3" class="custom-switch-input">
+      <span class="custom-switch-indicator"></span>
+      <span class="custom-switch-description">Pop</span>
+    </label>
+  </div>
+</div>
+
+
+<div class="selectgroup selectgroup-pills">
+
+                        <label class="selectgroup-item">
+                          <input type="checkbox" name="value" value="HTML" class="selectgroup-input" checked="">
+                          <span class="selectgroup-button">HTML</span>
                         </label>
-                        <label class="custom-switch">
-                          <input type="radio" name="option" value="2" class="custom-switch-input">
-                          <span class="custom-switch-indicator"></span>
-                          <span class="custom-switch-description">Lounge2</span>
+
+
+                        <label class="selectgroup-item">
+                          <input type="checkbox" name="value" value="CSS" class="selectgroup-input">
+                          <span class="selectgroup-button">CSS</span>
                         </label>
-                        <label class="custom-switch">
-                          <input type="radio" name="option" value="3" class="custom-switch-input">
-                          <span class="custom-switch-indicator"></span>
-                          <span class="custom-switch-description">Classic</span>
+                        <label class="selectgroup-item">
+                          <input type="checkbox" name="value" value="PHP" class="selectgroup-input">
+                          <span class="selectgroup-button">PHP</span>
                         </label>
-                        <label class="custom-switch">
-                          <input type="radio" name="option" value="3" class="custom-switch-input">
-                          <span class="custom-switch-indicator"></span>
-                          <span class="custom-switch-description">Exotic</span>
-                        <label class="custom-switch">
-                          <input type="radio" name="option" value="3" class="custom-switch-input">
-                          <span class="custom-switch-indicator"></span>
-                          <span class="custom-switch-description">Pop</span>
+                        <label class="selectgroup-item">
+                          <input type="checkbox" name="value" value="JavaScript" class="selectgroup-input">
+                          <span class="selectgroup-button">JavaScript</span>
                         </label>
+                        <label class="selectgroup-item">
+                          <input type="checkbox" name="value" value="Ruby" class="selectgroup-input">
+                          <span class="selectgroup-button">Ruby</span>
+                        </label>
+                        <label class="selectgroup-item">
+                          <input type="checkbox" name="value" value="Ruby" class="selectgroup-input">
+                          <span class="selectgroup-button">Ruby</span>
+                        </label>
+                        <label class="selectgroup-item">
+                          <input type="checkbox" name="value" value="C++" class="selectgroup-input">
+                          <span class="selectgroup-button">C++</span>
                         </label>
                       </div>
-                    </div>
 
- <div>
-  <%= f.label "wifi" %>
-  <%= f.check_box :wifi %>
+<!--- Select for user profile --->
+<!--- 
+<div class='form-check form-check-inline'>
+    <%= f.label "Wifi", class: 'form-check-label' %>
+    <%= f.check_box :wifi, class: 'form-check-input' %>
+    <%= f.label 'price', class: 'form-check-label' %>
+    <%= f.check_box :price, class: 'form-check-input' %>
+    <%= f.label 'e_outlet', class: 'form-check-label' %>
+    <%= f.check_box :e_outlet, class: 'form-check-input'%>
+    <%= f.label 'access_handi', class: 'form-check-label' %>
+    <%= f.check_box :access_handi, class: 'form-check-input' %>
+    <%= f.label 'vegan', class: 'form-check-label' %>
+    <%= f.check_box :vegan, class: 'form-check-input' %>
 </div>
-<div>
-<%= f.label 'price' %>
-<%= f.check_box :price %>
-</div>
-<div>
-<%= f.label 'e_outlet' %>
-<%= f.check_box :e_outlet%>
-</div>
-
-<div>
-<%= f.label 'access_handi' %>
-<%= f.check_box :access_handi %>
-</div>
-<h6> Vibe </h6>
-
-<div>
-<%= f.select 'vibe', ['Hip Hop', 'Lounge', 'Classic', 'Exotic', 'Pop', 'Electronic']%>
-
-
-<div>
-<%= f.label 'vegan' %>
-<%= f.check_box :vegan %>
+--->
+<div class='form-check form-check-inline'>
+    <%= f.label "Wifi", class: 'selectgroup-item selectgroup-button' %>
+    <%= f.check_box :wifi, class: 'selectgroup-input' %>
 </div>
 
 <h3> Address </h3>
