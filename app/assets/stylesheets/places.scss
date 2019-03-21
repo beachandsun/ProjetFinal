@@ -39,19 +39,13 @@ h1, h2, h3, h4, h5 {
 
 // PORTFOLIO //
 
+#portfolio {
+  margin-top: 2rem !important;
+}
+
 .card-bg-img {
   opacity: 0.85;
   border-radius: 6px;
-}
-
-.matches-item .card-title {
-  display: flex;
-  align-items: center;
-}
-
-.matches-item .card-title a {
-  color: #fff;
-  font-weight: 600;
 }
 
 .place-infos {
@@ -64,30 +58,25 @@ h1, h2, h3, h4, h5 {
   justify-content: space-between;
 }
 
-.place-infos .badge-pill-info {
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
+.place-infos .place-title {
+  display: flex;
+  align-items: center;
+}
+
+.place-infos .card-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.place-infos .card-title a {
+  color: #fff;
   font-weight: 600;
-  letter-spacing: .8px !important;
-  display: inline-block;
-  border-radius: 30px;
-  padding: 0.5rem 0.8rem !important;
-  color: #f4f9ff;
-}
-
-.place-infos .badge-pill-info {
-  background-color: #354ded;
-  border: none;
-}
-
-.place-badges {
-  width: 100%;
 }
 
 .place-infos .icons-box {
   background: none;
   background-size: cover;
-  margin: 0 0 0 1rem;
+  margin: 0;
   padding: 0;
 }
 
@@ -111,6 +100,23 @@ h1, h2, h3, h4, h5 {
 .place-infos .icons-box .icon i {
   color: #354ded;
   font-size: 16px;
+}
+
+.place-infos .badge-pill-info {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .8px !important;
+  border-radius: 30px;
+  padding: 0.4rem 0.8rem !important;
+  color: #f4f9ff;
+  background-color: #354ded;
+  border: none;
+  margin: 0;
+}
+
+.place-badges {
+  width: 100%;
 }
 
 // PROMOTED PLACES
