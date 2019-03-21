@@ -19,23 +19,19 @@ module PlacesHelper
         keep_access_handi_places
         keep_vibe_places
         keep_vegan_places
-        sort_by_distance(@tmp_places)
+        sort_by_distance(@tmp_places).reverse
       end
     
       def placeCloser
         sort_by_distance(@all_places)
-        @all_places.first
+        @all_places.last
       end
     
       private
     
       def sort_by_distance(array_of_places)
-        array_of_places.sort_by{ |place| address_of_place(place).bearing_from(address_of_user(current_user))}
+        array_of_places.sort_by!{ |place| address_of_place(place).bearing_from(address_of_user(current_user))}
       end
-    
-      # def distance_from(first_address_object, second_address_object)
-      #   first_address_object.bearing_from(second_addres_objects)
-      # end
     
       def address_of_place(place)
         Address.find(place.address_id)
