@@ -36,11 +36,20 @@ h1, h2, h3, h4, h5 {
 
 
 // PLACES#INDEX //
+.matches-index h1 {
+  text-align: center;
+  margin: 2rem 0rem 3rem 0rem;
+}
+
+.matches-index h3 {
+  font-weight: 500;
+  padding: 1rem;
+}
 
 // PORTFOLIO //
 
 #portfolio {
-  margin-top: 2rem !important;
+  margin-top: 3rem !important;
 }
 
 .card-bg-img {
