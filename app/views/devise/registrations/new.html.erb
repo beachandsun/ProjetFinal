@@ -1,94 +1,114 @@
+
+
+<br /><br /><br /><br />
+
 <h2>Sign up</h2>
 
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
+  <div class="field form-group">
+    <div class="col-sm-4">
+      <%= f.label :email , class: 'col-sm-2 controle-label'%>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
+  </div>
 
   <div class="field form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    <div class="col-sm-4">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+  <div class="field form-group">
+    <div class="col-sm-4">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: "form-control", required: ""%>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: "form-control", required: ""%>
-  </div>
-
-<!--- Select for vibes --->
-<div class="form-group">
-  <div class="control-label"><h6> Vibe </h6></div>
-    <div class="custom-switches-stacked mt-2">
-    <label class="custom-switch">
-      <input type="radio" name="option" value="1" class="custom-switch-input" checked="">
-      <span class="custom-switch-indicator"></span>
-      <span class="custom-switch-description">Hip-hop</span>
-    </label>
-    <label class="custom-switch">
-      <input type="radio" name="option" value="2" class="custom-switch-input">
-      <span class="custom-switch-indicator"></span>
-      <span class="custom-switch-description">Lounge2</span>
-    </label>
-    <label class="custom-switch">
-      <input type="radio" name="option" value="3" class="custom-switch-input">
-      <span class="custom-switch-indicator"></span>
-      <span class="custom-switch-description">Classic</span>
-    </label>
-    <label class="custom-switch">
-      <input type="radio" name="option" value="3" class="custom-switch-input">
-      <span class="custom-switch-indicator"></span>
-      <span class="custom-switch-description">Exotic</span>
-    </label>
-    <label class="custom-switch">
-      <input type="radio" name="option" value="3" class="custom-switch-input">
-      <span class="custom-switch-indicator"></span>
-      <span class="custom-switch-description">Pop</span>
-    </label>
+<!--- from for vibe --->
+<div class="from-group">
+  <div class="control-label"><h6> Vibe </h6> </div>
+      <label class="custom-switch mt-2">
+        <%= f.check_box :vibe, class: 'custom-switch-input' %>
+        <span class="custom-switch-indicator"></span>
+        <span class="custom-switch-description">Hip hop</span>
+      </label>
+      <label class="custom-switch mt-2">
+        <%= f.check_box :vibe, class: 'custom-switch-input' %>
+        <span class="custom-switch-indicator"></span>
+        <span class="custom-switch-description">Lounge</span>
+      </label>
+      <label class="custom-switch mt-2">
+        <%= f.check_box :vibe, class: 'custom-switch-input' %>
+        <span class="custom-switch-indicator"></span>
+        <span class="custom-switch-description">Classique</span>
+      </label>
+      <label class="custom-switch mt-2">
+        <%= f.check_box :vibe, class: 'custom-switch-input' %>
+        <span class="custom-switch-indicator"></span>
+        <span class="custom-switch-description">Exotique</span>
+      </label>
+      <label class="custom-switch mt-2">
+        <%= f.check_box :vibe, class: 'custom-switch-input' %>
+        <span class="custom-switch-indicator"></span>
+        <span class="custom-switch-description">Pop</span>
+      </label>
+      <label class="custom-switch mt-2">
+        <%= f.check_box :vibe, class: 'custom-switch-input' %>
+        <span class="custom-switch-indicator"></span>
+        <span class="custom-switch-description">Electronique</span>
+      </label>
   </div>
 </div>
 
+<!-- Form for Preferences -->
+<div class="from-group">
+  <div class="control-label"><h6> Préférences </h6> </div>
+      <label class="custom-switch mt-2">
+        <%= f.check_box :wifi, class: 'custom-switch-input' %>
+        <span class="custom-switch-indicator"></span>
+        <span class="custom-switch-description">Wifi</span>
+      </label>
+      <label class="custom-switch mt-2">
+        <%= f.check_box :price, class: 'custom-switch-input' %>
+        <span class="custom-switch-indicator"></span>
+        <span class="custom-switch-description">Prix</span>
+      </label>
+      <label class="custom-switch mt-2">
+        <%= f.check_box :e_outlet, class: 'custom-switch-input' %>
+        <span class="custom-switch-indicator"></span>
+        <span class="custom-switch-description">Prise électrique</span>
+      </label>
+      <label class="custom-switch mt-2">
+        <%= f.check_box :access_handi, class: 'custom-switch-input' %>
+        <span class="custom-switch-indicator"></span>
+        <span class="custom-switch-description">Acces personne à mobilité réduite</span>
+      </label>
+      <label class="custom-switch mt-2">
+        <%= f.check_box :wifi, class: 'custom-switch-input' %>
+        <span class="custom-switch-indicator"></span>
+        <span class="custom-switch-description">Vegan</span>
+      </label>
+  </div>
+</div>
 
-<div class="selectgroup selectgroup-pills">
+<!--- 
+<div class="form-group">
+                      <div class="control-label">Toggle switch single</div>
+                      <label class="custom-switch mt-4">
+                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
+                        <span class="custom-switch-indicator"></span>
+                        <span class="custom-switch-description">I agree with terms and conditions</span>
+                      </label>
+                    </div>
+--->
 
-                        <label class="selectgroup-item">
-                          <input type="checkbox" name="value" value="HTML" class="selectgroup-input" checked="">
-                          <span class="selectgroup-button">HTML</span>
-                        </label>
-
-
-                        <label class="selectgroup-item">
-                          <input type="checkbox" name="value" value="CSS" class="selectgroup-input">
-                          <span class="selectgroup-button">CSS</span>
-                        </label>
-                        <label class="selectgroup-item">
-                          <input type="checkbox" name="value" value="PHP" class="selectgroup-input">
-                          <span class="selectgroup-button">PHP</span>
-                        </label>
-                        <label class="selectgroup-item">
-                          <input type="checkbox" name="value" value="JavaScript" class="selectgroup-input">
-                          <span class="selectgroup-button">JavaScript</span>
-                        </label>
-                        <label class="selectgroup-item">
-                          <input type="checkbox" name="value" value="Ruby" class="selectgroup-input">
-                          <span class="selectgroup-button">Ruby</span>
-                        </label>
-                        <label class="selectgroup-item">
-                          <input type="checkbox" name="value" value="Ruby" class="selectgroup-input">
-                          <span class="selectgroup-button">Ruby</span>
-                        </label>
-                        <label class="selectgroup-item">
-                          <input type="checkbox" name="value" value="C++" class="selectgroup-input">
-                          <span class="selectgroup-button">C++</span>
-                        </label>
-                      </div>
 
 <!--- Select for user profile --->
 <!--- 
@@ -105,13 +125,25 @@
     <%= f.check_box :vegan, class: 'form-check-input' %>
 </div>
 --->
-<div class='form-check form-check-inline'>
-    <%= f.label "Wifi", class: 'selectgroup-item selectgroup-button' %>
-    <%= f.check_box :wifi, class: 'selectgroup-input' %>
-</div>
-
 <h3> Address </h3>
+  <div class="field form-group">
+    <div class="col-sm-4">
+      <%= f.fields_for :address_attributes do |user_address_form| %>
+      <%= user_address_form.text_field :address_number, class: "form-control", placeholder: "Numéro de rue" %>
+      <%= user_address_form.text_field :address_main, class: "form-control", placeholder: "Nom de rue" %>
+      <%-#= user_address_form.text_field :address_complement_1, class: "form-control", placeholder: "Address_complement_1" -%>
+      <%-#= user_address_form.text_field :address_complement_2, class: "form-control", placeholder: "Address_complement_2" -%>
+      <%= user_address_form.text_field :city, class: "form-control", placeholder: "Ville" %>
+      <%= user_address_form.text_field :postal_code, class: "form-control", placeholder: "Code" %>
+      <%-#= user_address_form.text_field :country, class: "form-control", placeholder: "Country" -%>
 
+      <% end %>
+    </div>
+  </div>
+
+
+
+<!--- 
  <%= f.fields_for :address_attributes do |user_address_form| %>
  <%= user_address_form.text_field :address_number, class: "form-control", placeholder: "Address_number" %>
  <%= user_address_form.text_field :address_main, class: "form-control", placeholder: "Address_main" %>
@@ -122,6 +154,7 @@
  <%-#= user_address_form.text_field :country, class: "form-control", placeholder: "Country" -%>
 
 <% end %>
+--->
  
   <div class="actions">
     <%= f.submit "Sign up" %>
