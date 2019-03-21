@@ -7,9 +7,9 @@
 
     <nav class="main-nav float-right d-none d-lg-block">
       <ul>
-        <li><%= link_to "Accueil", root_path %></li>
-        <li><%= link_to "L'équipe", root_path %></li>
         <%if user_signed_in?%>
+          <li><%= link_to "Accueil", root_path %></li>
+          <li><%= link_to "L'équipe", root_path %></li>
           <li><%=link_to "Mon profil", user_path(current_user.id) %></li>
           <li><%=link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
         <%else%>

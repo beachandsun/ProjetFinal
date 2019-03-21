@@ -75,3 +75,4 @@ gem "aws-sdk-s3", require: false
 gem 'aws-sdk', '~> 3' 
 gem 'faker'
 gem 'table_print'
+gem 'rb-readline'

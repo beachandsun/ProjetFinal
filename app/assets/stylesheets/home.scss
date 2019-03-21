@@ -10,8 +10,13 @@
 #show-header {
   width: 100%;
   height: 50%;
-  
   padding: 0;
+}
+
+#show-header-landing {
+  width: 100%;
+  height: 800px;
+  background-color: #000;
 }
 
 .header-info {
@@ -24,20 +29,18 @@
 }
 
 .header-info-landing {
-  width: 70%;
-  float: left;
+  width: 100%;
   position: absolute;
-  top: 20%;
-  left: 10%;
+  top: 30%;
   z-index: 3;
 }
 
 .header-info-landing h2 {
   color: #fff;
-  margin-bottom: 40px;
-  font-size: 100px;
+  text-align: center;
+  margin-top: 40px;
   font-weight: 700;
-  font-size: 6vw;
+  font-size: 8vmin;  
 }
 
 .header-info h2 {
@@ -49,11 +52,14 @@
 
 .header-btn-landing {
   display: flex;
+  justify-content: center;
+  width: 100%;
+	font-size: 5vw;
+ 	top: 50%;
+  padding-top: 100px;
   position: absolute;
   z-index: 3;
-	font-size: 6vw;
-  top: 60%;
-  left: 12%;
+  
 }
 
 .btn-fav {
@@ -84,7 +90,8 @@
   background: #b61251;
   border: 2px solid #b61251;
   color: #fff;
-  font-size: 2vw;
+  font-size: 4vmin;
+ 
 }
 
 .btn-fav:hover {
@@ -94,7 +101,7 @@
 }
 
 .btn-fav-landing:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: #F8EAEF;
   border: 2px solid #b61251;
   color: #b61251;
 }
@@ -167,18 +174,9 @@
   color: #556877;
 }
 
-#carousel-section .carousel-inner {
-	width: 100%;
-  min-width: 100%;
-  height: 725px;
-  max-height: 800px;
-  min-height: 100px;
-  overflow: hidden;
-  object-fit: cover;
+.carousel-inner {
+  opacity: 0.60;
 }
 
-#footer {
-	min-height: 80px;
-	background-color: #2E4A5F !important;
-}
+
 
