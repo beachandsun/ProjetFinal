@@ -18,5 +18,11 @@
     <p>Vibe : <%= current_user.vibe %></p>
     <p>Vegan : <%= boolean_vegan %></p>
     <%= link_to "Editer le profil", edit_user_registration_path(current_user.id) %>
+
+    <h3>Vous souhaitez ajouter des photos ?</h3>
+				<%= form_tag user_session_path(@user), multipart: true do %>
+				<%= file_field_tag :pictures, :multiple => true %>
+				<%= submit_tag "mettre à jour" %>
+        <%end%>
   <%end%>
 

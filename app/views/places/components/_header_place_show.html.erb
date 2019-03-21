@@ -1,13 +1,31 @@
-<section id="show-header" class="clearfix">	
-	<div class="container">
+<section class="clearfix carousel-place-show">	
+	<div id="show-header">
 
 		<div class="header-info text-right">
-			<h2><%=@place.name%></h2>
-
-			<div>
-				<a href="#" class="btn-fav float-right scrollto"><i class="fas fa-heart"></i> Ajouter aux favoris</a>
+			<h2><%= @place.name %></h2>
+			<div class="row header-btn">
+					<a href="#" class="btn-fav scrollto"><i class="fas fa-heart"></i> Ajouter aux favoris</a>
+					<div>
+						<a href="#" class="btn-edit scrollto">Modifier les informations</a>
+						<a href="#" class="btn-delete scrollto">Supprimer ce lieu</a>
+					</div>
 			</div>
 		</div>
+
+		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<%= image_tag "coffee-shop.jpg", class:"d-block w-100" %>
+				</div>
+				<div class="carousel-item">
+					<%= image_tag "coffee-shop.jpg", class:"d-block w-100" %>
+				</div>
+				<div class="carousel-item">
+					<%= image_tag "coffee-shop.jpg", class:"d-block w-100" %>
+				</div>
+			</div>
+		</div>
+
 
 	</div>
 </section>

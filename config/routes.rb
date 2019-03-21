@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :places do
     resources :pictures, only: [:create]
+    resources :likes, only: [:create, :destroy]
   end
   resources :users, only: [:show]
   resources :addresses
