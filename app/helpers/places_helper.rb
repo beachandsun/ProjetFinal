@@ -27,11 +27,12 @@ module PlacesHelper
         @all_places.last
       end
     
-      # def placeTopFav
-      #   @all_places.sort_by!  { |place| 
-      #   Like.find_by(place_id: place.id).
-      # }
-      # end
+      def placeTopFav
+        places_all = Array.new
+        store_all_places(places_all)
+        places_all.sort_by!{|place| place.liked_count}
+        places_all.last
+      end
 
       private
     
