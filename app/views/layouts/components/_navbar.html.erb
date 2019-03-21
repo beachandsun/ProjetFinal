@@ -2,13 +2,17 @@
   <div class="container">
 
     <div class="logo float-left">
-      <a href="root_path" class="scrollto"><img src="../assets/img/logo.png" alt="" class="img-fluid"></a>
+   
+      <%= link_to places_path do %>
+        <%= image_tag "logo.png", class: "scrollto" %>
+      <% end %>  
+    
     </div>
 
     <nav class="main-nav float-right d-none d-lg-block">
       <ul>
         <%if user_signed_in?%>
-          <li><%= link_to "Accueil", root_path %></li>
+          <li><%= link_to "Accueil", places_path %></li>
           <li><%= link_to "L'équipe", root_path %></li>
           <li><%=link_to "Mon profil", user_path(current_user.id) %></li>
           <li><%=link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
@@ -16,7 +20,6 @@
           <li><%=link_to "Se connecter", new_user_session_path %></li>
           <li><%=link_to "S'inscrire", new_user_registration_path %></li>
         <%end%>
-        <li><%= link_to "Contact", root_path %></li>
       </ul>
     </nav>
 
