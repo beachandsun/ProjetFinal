@@ -22,7 +22,7 @@
                 <%= image_tag "coffee-shop.jpg", class:"d-block w-100 card-img-top" %>
               <div class="card-body">
                   <h5 class="card-title"><%= @places.first.name %></h5>
-                <p class="card-text"><%= @places.first.description %></p>
+                <p class="card-text"><%= @places.first.description.truncate(30) %></p>
               </div>
             </div>
           </div>
@@ -34,7 +34,7 @@
               <%= image_tag "coffee-shop.jpg", class:"d-block w-100 card-img-top" %>
               <div class="card-body">
                   <h5 class="card-title"><%= @places.last.name %></h5>
-                <p class="card-text"><%= @places.last.description %></p>
+                <p class="card-text"><%= @places.last.description.truncate(30) %></p>
               </div>
             </div>
           </div>

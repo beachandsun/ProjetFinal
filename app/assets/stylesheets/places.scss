@@ -25,6 +25,16 @@
  */
 
 
+
+body {
+  color: #494c4f !important;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #494c4f !important ;
+}
+
+
 // PLACES#INDEX //
 
 // PORTFOLIO //
@@ -34,11 +44,21 @@
   border-radius: 6px;
 }
 
+.matches-item .card-title {
+  display: flex;
+  align-items: center;
+}
+
+.matches-item .card-title a {
+  color: #fff;
+  font-weight: 600;
+}
+
 .place-infos {
   position: absolute;
   left: 0;
   bottom: 0;
-  padding: 1.25rem;
+  padding: 1.25rem 1.25rem 0.5rem 1.25rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -51,25 +71,31 @@
   letter-spacing: .8px !important;
   display: inline-block;
   border-radius: 30px;
-  color: #fff;
+  padding: 0.5rem 0.8rem !important;
+  color: #f4f9ff;
 }
 
 .place-infos .badge-pill-info {
-  background-color: rgba(70, 50, 185, 0.8);
+  background-color: #354ded;
+  border: none;
+}
+
+.place-badges {
+  width: 100%;
 }
 
 .place-infos .icons-box {
   background: none;
   background-size: cover;
   margin: 0 0 0 1rem;
+  padding: 0;
 }
 
-.place-infos .icons-box .icon,
-.place-infos .icons-box .icon-false {
+.place-infos .icons-box .icon {
   float: left;
-  background: rgba(255, 255, 255, 0.8);
-  width: 40px;
-  height: 40px;
+  background: #f4f9ff;
+  width: 36px;
+  height: 36px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,12 +105,19 @@
 }
 
 .place-infos .icons-box .icon {
-  border: 2px solid #007bff;
+  border: 1px solid #354ded;
 }
 
 .place-infos .icons-box .icon i {
-  color: #007bff;
-  font-size: 18px;
+  color: #354ded;
+  font-size: 16px;
+}
+
+// PROMOTED PLACES
+
+#portfolio-flters li {
+  background: #f4f9ff;
+  color: #354ded;
 }
 
 
