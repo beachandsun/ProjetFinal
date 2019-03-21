@@ -985,6 +985,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   letter_opener
   listen (>= 3.0.5, < 3.2)
+  mail
   nyan-cat-formatter
   pg (>= 0.18, < 2.0)
   pry-rails
