@@ -4,7 +4,12 @@
 		<div class="header-info text-right">
 			<h2><%= @place.name %></h2>
 			<div class="row header-btn">
-					<a href="#" class="btn-fav scrollto"><i class="fas fa-heart"></i> Ajouter aux favoris</a>
+
+			<% if like? %>
+				 <%= button_to 'supprimer des favoris', place_like_path(@place, current_like_id), class: "btn-fav scrollto", method: :delete %>
+			<% else %>
+				<%= button_to 'ajouter aux favoris', place_likes_path(@place), class: "btn-fav scrollto", method: :post %>
+ 		    <% end %>
 					<div>
 						<a href="#" class="btn-edit scrollto">Modifier les informations</a>
 						<a href="#" class="btn-delete scrollto">Supprimer ce lieu</a>
