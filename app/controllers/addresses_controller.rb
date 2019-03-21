@@ -1,5 +1,5 @@
 class AddressesController < ApplicationController
-
+  
   def create
     new_address_record = current_user.address.new(address_params)
     if new_address_record.save
@@ -21,6 +21,8 @@ class AddressesController < ApplicationController
   end
 
   def update
+    update_address = current_user.address.update(address_params)
+    current_user.address.geocoder
   end
 
   def delete

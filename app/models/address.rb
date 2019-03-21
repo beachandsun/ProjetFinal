@@ -1,6 +1,8 @@
 class Address < ApplicationRecord
     geocoded_by :address
     after_validation :geocode
+    after_update :geocode
+
 
     has_one :user
     has_one :place

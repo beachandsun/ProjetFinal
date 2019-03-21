@@ -6,8 +6,9 @@ Rails.application.routes.draw do
     resources :pictures, only: [:create]
     resources :likes, only: [:create, :destroy]
   end
-  resources :users, only: [:show]
-  resources :addresses
+  resources :users, only: [:show] do
+    resources :addresses, only: [:update, :edit]
+  end
 
   resources :admins, only: [:index]
   #get 'dashboard_test', to: "dashboard#index"
