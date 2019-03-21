@@ -27,6 +27,12 @@ module PlacesHelper
         @all_places.last
       end
     
+      # def placeTopFav
+      #   @all_places.sort_by!  { |place| 
+      #   Like.find_by(place_id: place.id).
+      # }
+      # end
+
       private
     
       def sort_by_distance(array_of_places)
