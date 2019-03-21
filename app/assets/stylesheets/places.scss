@@ -28,6 +28,7 @@
 
 body {
   color: #494c4f !important;
+  background-color: #fff !important;
 }
 
 h1, h2, h3, h4, h5 {
@@ -49,7 +50,9 @@ h1, h2, h3, h4, h5 {
 // PORTFOLIO //
 
 #portfolio {
-  margin-top: 3rem !important;
+  margin: 3rem 0 2rem 0 !important;
+  padding: 60px 0 0 0 !important;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
 }
 
 .card-bg-img {
