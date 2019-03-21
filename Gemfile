@@ -29,6 +29,8 @@ gem 'devise'
 gem 'byebug'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+gem 'rb-readline'
+gem 'table_print'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

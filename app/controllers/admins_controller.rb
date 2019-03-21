@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   layout "dashboard"
-  before_action :user_is_admin, :unless => :user_is_admin
+  before_action :user_is_admin
   action :index
 
 
