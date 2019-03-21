@@ -7,13 +7,6 @@
 		<header class="section-header">
 			<h3>Découvrir l'endroit</h3><br>
 			
-			
-<% if like? %>
-  <%= button_to 'Unlike', place_like_path(@place, current_like_id), method: :delete %>
-<% else %>
-  <%= button_to 'Like', place_likes_path(@place), method: :post %>
-<% end %>
-			
 		</header>
 
     <%= render "places/components/presentation_place"  %>

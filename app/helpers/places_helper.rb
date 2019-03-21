@@ -19,21 +19,26 @@ module PlacesHelper
         keep_access_handi_places
         keep_vibe_places
         keep_vegan_places
-        sort_by_distance(@tmp_places)
+        sort_by_distance(@tmp_places).reverse
       end
     
-      
+      def placeCloser
+        sort_by_distance(@all_places)
+        @all_places.last
+      end
     
+      def placeTopFav
+        places_all = Array.new
+        store_all_places(places_all)
+        places_all.sort_by!{|place| place.liked_count}
+        places_all.last
+      end
+
       private
     
       def sort_by_distance(array_of_places)
-        puts "XXX" * 50
-        array_of_places.sort_by{ |place| address_of_place(place).bearing_from(address_of_user(current_user))}
+        array_of_places.sort_by!{ |place| address_of_place(place).bearing_from(address_of_user(current_user))}
       end
-    
-      # def distance_from(first_address_object, second_address_object)
-      #   first_address_object.bearing_from(second_addres_objects)
-      # end
     
       def address_of_place(place)
         Address.find(place.address_id)
@@ -70,10 +75,7 @@ module PlacesHelper
                 delete_place_from_array(place, @tmp_places)
             end
           end
-        
-
         end
-        
         return nil
       end
     
@@ -103,11 +105,7 @@ module PlacesHelper
             if (@tmp_places.length > 3)
                 delete_place_from_array(place, @tmp_places)
             end
-          puts place
-
           end
-          puts place
-
         end
         return nil
       end

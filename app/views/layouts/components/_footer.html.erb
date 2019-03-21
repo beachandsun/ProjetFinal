@@ -5,54 +5,35 @@
 
         <div class="col-lg-4 col-md-6 footer-info">
           <h3>Work & Koffee</h3>
-          <p>La philosophie de Work & Koffee est d'offrir des suggestions personnalisées pour que les utilisateurs travaillent dans des lieux atypiques. Travaillez ailleurs, créez une nouvelle routine chaque jour.</p>
+          <p>Work & Koffee est l'application mobile qui vous aide à trouver l'endroit idéal pour travailler à Montpellier. Grâce à nos suggestions personnalisées, que vous soyez adeptes d'endroits atypiques ou plus classiques, vous ne perdrez plus une minute à chercher LE bon spot pour travailler !</p>
+          <br>
+          <p>© All rights reserved</p>
         </div>
 
-        <div class="col-lg-2 col-md-6 footer-links">
+        <div class="col-lg-2 col-md-6 footer-links text-center">
           <h4>Liens utiles</h4>
           <ul>
-            <li><%= link_to "Accueil", root_path %></li>
-            <li><%= link_to "L'équipe", root_path %></li>
-            <li><%= link_to "Terms of service", root_path %></li>
-            <li><%= link_to "Privacy policy", root_path %></li>
+            <%if user_signed_in?%>
+              <li><%= link_to "Accueil", places_path %></li>
+              <li><%= link_to "L'équipe", root_path %></li>
+            <%else%>  
+              <li><%=link_to "Se connecter", new_user_session_path %></li>
+              <li><%=link_to "S'inscrire", new_user_registration_path %></li>
+            <%end%>  
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-6 footer-contact">
+        <div class="col-lg-3 col-md-6 footer-contact text-right">
           <h4>Nous contacter</h4>
           <p>
             5 Place du Peyrou <br>
             Montpellier, 34000 <br>
             France <br>
             <strong>Téléphone:</strong> 04 67 55 89 55<br>
-            <strong>Email:</strong> bonjour@work-and-koffee.com<br>
+            <strong>Email:<a href="mailto:bonjour@work-and-koffee.com"></strong> bonjour@work-and-koffee.com<br>
           </p>
-
-          <div class="social-links">
-            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
-          </div>
-
         </div>
-
       </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="copyright">
-      &copy; Copyright <strong>NewBiz</strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!--
-        All the links in the footer should remain intact.
-        You can delete the links only if you purchased the pro version.
-        Licensing information: https://bootstrapmade.com/license/
-        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
-      -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
     </div>
   </div>
 </footer>
