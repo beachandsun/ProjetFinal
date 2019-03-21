@@ -14,7 +14,7 @@
           <h4>Liens utiles</h4>
           <ul>
             <%if user_signed_in?%>
-              <li><%= link_to "Accueil", root_path %></li>
+              <li><%= link_to "Accueil", places_path %></li>
               <li><%= link_to "L'équipe", root_path %></li>
             <%else%>  
               <li><%=link_to "Se connecter", new_user_session_path %></li>

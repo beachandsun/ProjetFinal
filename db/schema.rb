@@ -50,15 +50,6 @@ ActiveRecord::Schema.define(version: 2019_03_19_135555) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "favoris", force: :cascade do |t|
-    t.bigint "place_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["place_id"], name: "index_favoris_on_place_id"
-    t.index ["user_id"], name: "index_favoris_on_user_id"
-  end
-
   create_table "likes", force: :cascade do |t|
     t.bigint "place_id"
     t.bigint "user_id"
@@ -109,8 +100,6 @@ ActiveRecord::Schema.define(version: 2019_03_19_135555) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "favoris", "places"
-  add_foreign_key "favoris", "users"
   add_foreign_key "likes", "places"
   add_foreign_key "likes", "users"
 end
