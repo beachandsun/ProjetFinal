@@ -25,68 +25,6 @@
  */
 
 
-// GENERAL //
-
-body {
-  color: #494c4f !important;
-  background-color: #fff !important;
-  min-height: 100vh !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-h1, h2, h3, h4, h5 {
-  color: #494c4f !important ;
-}
-
-.app-content {
-  flex: 1 0 auto !important;
-}
-
-.main-nav a {
-  color: #002259 !important;
-}
-
-.main-nav a:hover {
-  color: #354ded !important;
-}
-
-.mobile-nav a {
-  display: block;
-  position: relative;
-  color: #fff;
-  padding: 15px 25px !important;
-  font-weight: 500;
-  font-size: 20px !important;
-}
-
-footer {
-  flex-shrink: 0 !important;
-  position: static !important;
-}
-
-footer h3 {
-  color: #fff !important;
-}
-
-footer h4 {
-  padding-top: 10px !important;
-  color: #fff !important;
-}
-
-.footer-links ul a:hover {
-  color: #354ded !important;
-}
-
-.footer-contact a {
-  color: #fff;
-}
-
-.footer-contact a:hover {
-  color: #354ded !important;
-}
-
-
 // PLACES#INDEX //
 .matches-index h1 {
   text-align: center;
@@ -204,26 +142,25 @@ footer h4 {
 }
 
 .header-info {
-  width: 50%;
-  float: right;
+  width: 100%;
   position: absolute;
-  top: 40%;
-  right: 2%;
+  top: 55%;
   z-index: 3;
 }
 
 .header-info h2 {
-  color: #fff;
-  margin-bottom: 40px;
+  color: #fff !important;
+  margin: 0;
+  padding-left: 2rem;
   font-size: 4rem;
   font-weight: 700;
+  display: block;
 }
 
 .header-btn {
   width: 100%;
-  margin-left: 4rem;
   display: flex;
-  justify-content: end;
+  align-items: center;
 }
 
 .btn-fav {
@@ -235,16 +172,22 @@ footer h4 {
   padding: 10px 32px;
   border-radius: 50px;
   transition: 0.5s;
-  margin: 0 20px 20px 0;
-  background: rgba(255, 255, 255, 0.5);
+  background: #b61251;
+  border: 2px solid #b61251;
+  color: #fff;
+}
+
+.btn-fav:hover {
+  background: #fff;
   border: 2px solid #b61251;
   color: #b61251;
 }
 
-.btn-fav:hover {
-  background: #b61251;
-  border: 2px solid #b61251;
-  color: #fff;
+.admin-header-btn {
+  width: 100%;
+  position: absolute;
+  top: 80%;
+  z-index: 3;
 }
 
 .btn-edit,
