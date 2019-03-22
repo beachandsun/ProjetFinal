@@ -1,8 +1,31 @@
+
+<!-- MODAL -->
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="d-flex justify-content-center">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4>Bienvenue sur Work & Koffee</h4>
+            </div>
+            <div class="modal-body text-center">
+                <p>Merci de votre inscription ! Nous vous invitons à remplir vos informations personnelles pour profiter
+                    pleinement de nos services.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Compris !</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 <section class="matches-index pt-5">
 	<div class="container">
 		<div class="row d-block">
-			<h1>Salut <%= current_user.first_name %>!</h1>
-			<h3>Voici des lieux qui te correspondent</h3>
+			<h1>Voici les lieux qui correspondent à tes critères</h1>
 		</div>
 
 		<%= render "places/components/portfolio_places"  %>

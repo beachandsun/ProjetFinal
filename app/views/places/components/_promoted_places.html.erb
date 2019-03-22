@@ -19,14 +19,14 @@
         <div class="col-lg-6 portfolio-item filter-close">
           <div class="portfolio-wrap">
             <div class="card">
-              <% if placeCloser.pictures.attached? %>
-                <%= image_tag placeCloser.pictures.first, alt: 'picture', class:"d-block w-100 card-img-top"  %>
+              <% if place_closer.pictures.attached? %>
+                <%= image_tag place_closer.pictures.first, alt: 'picture', class:"d-block w-100 card-img-top"  %>
               <% else %>
                 <%= image_tag "coffee-shop.jpg", class:"d-block w-100 card-img-top" %>
               <% end %>
               <div class="card-body">
-                  <h5 class="card-title"><%= link_to placeCloser.name, place_path(placeCloser.id) %></h5>
-                <p class="card-text"><%= placeCloser.description.truncate(70) %></p>
+                  <h5 class="card-title"><%= link_to place_closer.name, place_path(place_closer.id) %></h5>
+                <p class="card-text"><%= place_closer.description.truncate(70) %></p>
               </div>
             </div>
           </div>
@@ -35,14 +35,14 @@
         <div class="col-lg-6 portfolio-item filter-liked">
           <div class="portfolio-wrap">
             <div class="card">
-                <% if placeTopFav.pictures.attached? %>
-                  <%= image_tag placeCloser.pictures.first, alt: 'picture', class:"d-block w-100 card-img-top"  %>
+                <% if place_top_fav.pictures.attached? %>
+                  <%= image_tag place_closer.pictures.first, alt: 'picture', class:"d-block w-100 card-img-top"  %>
                 <% else %>
                   <%= image_tag "coffee-shop.jpg", class:"d-block w-100 card-img-top" %>
                 <% end %>
               <div class="card-body">
-                  <h5 class="card-title"><%= link_to placeTopFav.name, place_path(placeTopFav.id) %></h5>
-                <p class="card-text"><%= placeTopFav.description.truncate(70) %></p>
+                  <h5 class="card-title"><%= link_to place_top_fav.name, place_path(place_top_fav.id) %></h5>
+                <p class="card-text"><%= place_top_fav.description.truncate(70) %></p>
               </div>
             </div>
           </div>

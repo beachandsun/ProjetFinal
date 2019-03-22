@@ -1,5 +1,5 @@
 <div class="row matches">
-  <% placesMatch.each do |place| %>
+  <% places_match.each do |place| %>
 
   <div class="col-lg-4 col-md-6 matches-item">
     <div class="card text-white">
@@ -24,14 +24,16 @@
               </div>
             </div>
             <% end %>
-           <% if @like.include?(place.id) %>
-            <div class="icons-box-like">
-              <div class="icon">
-                <i class="fas fa-heart"></i>
-              </div>
-            </div>
-            <% end %>
           </div>
+          <div class="place-like">
+             <% if @like.include?(place.id) %>
+              <div class="icons-box-like">
+                <div class="icon">
+                  <i class="fas fa-heart"></i>
+                </div>
+              </div>
+              <% end %>
+            </div>  
           <div class="d-flex justify-content-center">
             <span class="badge badge-pill badge-pill-info"><i class="fas fa-music"></i> <%= place.vibe %></span>
           </div>
