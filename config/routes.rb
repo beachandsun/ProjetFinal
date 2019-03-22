@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'statics/team'
+  get 'statics/favoris'
   devise_for :users, :controllers => { :registrations => "registrations" }
   root 'home#index'
 
@@ -7,7 +8,6 @@ Rails.application.routes.draw do
     resources :pictures, only: [:create]
     resources :likes, only: [:create, :destroy]
   end
-  resources :users, only: [:show]
   resources :addresses
 
   resources :admins, only: [:index]

@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  layout "landing"
+  layout "application"
   before_action :user_is_connected
   def index
 
