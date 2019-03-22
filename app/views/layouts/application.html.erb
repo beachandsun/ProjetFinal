@@ -2,21 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>The Hacking Project - Landing</title>
+    <title>Work & Koffee</title>
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <!-- Google Fonts -->
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
     <!-- Font Awesome -->
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+      
       <%= stylesheet_link_tag 'landing', media: 'all' %>
+
   </head>
 
   <body>
-		<%= render "layouts/components/navbar"  %>
 
-    <%= yield %>
+    <div class="app-content">
 
+      <%= render "layouts/components/navbar"  %>
+
+          <% flash.each do |key, message| %>
+            <div><%= message %></div>
+          <% end %>
+
+      <br><br><br>
+      
+      <%= yield %>
+        
+    </div>
+	
 		<%= render "layouts/components/footer"  %>
     
     <%= javascript_include_tag 'landing' %>

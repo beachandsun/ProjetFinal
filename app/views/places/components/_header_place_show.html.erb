@@ -1,0 +1,48 @@
+<section class="clearfix carousel-place-show">	
+	<div id="show-header">
+
+		<div class="header-info d-flex">
+
+			<div class="col-8 d-flex align-items-center">
+				<h2><%= @place.name %></h2>
+			</div>
+
+			<div class="col-4 header-btn">
+
+				<% if like? %>
+					<%= button_to 'supprimer des favoris', place_like_path(@place, current_like_id), class: "btn-fav scrollto", method: :delete %>
+				<% else %>
+					<%= button_to icon('fas', 'heart'), place_likes_path(@place), class: "btn-fav scrollto", method: :post %>
+				<% end %>
+			</div>
+
+		</div>
+
+		<% if current_user.try(:admin?) %>
+		<div class="row admin-header-btn">
+
+				<div>
+					<a href="#" class="btn-edit scrollto">Modifier les informations</a>
+					<a href="#" class="btn-delete scrollto">Supprimer ce lieu</a>
+				</div>
+
+		</div>
+		<% end %>
+
+		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<%= image_tag "coffee-shop.jpg", class:"d-block w-100" %>
+				</div>
+				<div class="carousel-item">
+					<%= image_tag "coffee-shop.jpg", class:"d-block w-100" %>
+				</div>
+				<div class="carousel-item">
+					<%= image_tag "coffee-shop.jpg", class:"d-block w-100" %>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</section>

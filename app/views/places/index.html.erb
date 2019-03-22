@@ -1,21 +1,13 @@
-<!-- <div class="row">
-	<% Place.all.each do |place| %>
-		<h3><%= place.name %></h3>
-		<h2><%= place.description %></h2>
-		<% if place.wifi %>
-			<p>Wifi inside</p>
-			<%else%>
-			<p>No wifi</p>
-		<%end%>
-	<%end%>
-</div> -->
+<section class="matches-index pt-5">
+	<div class="container">
+		<div class="row d-block">
+			<h1>Salut <%= current_user.first_name %>!</h1>
+			<h3>Voici des lieux qui te correspondent</h3>
+		</div>
 
-    <section id="portfolio" class="clearfix">
-      <div class="container">
-				<div class="row portfolio-container">
+		<%= render "places/components/portfolio_places"  %>
 
-					<%= render "places/components/portfolio_places"  %>
+		<%= render "places/components/promoted_places"  %>		
 
-				</div>
-			</div>
-		</section>
+	</div>
+</section>
