@@ -209,9 +209,13 @@ footer h4 {
   max-height: 500px;
 }
 
+.carousel-place-show .carousel {
+  background-color: #000;
+}
+
 .carousel-place-show .carousel-inner {
   max-height: 500px !important;
-  opacity: 0.80 !important;
+  opacity: 0.85 !important;
 }
 
 .header-info {
