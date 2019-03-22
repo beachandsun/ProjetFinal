@@ -4,71 +4,38 @@
 
 
 
-// PLACES#SHOW //
+// LANDING CAROUSEL //
 
-//HEADER
-#show-header {
+#show-header-landing {
   width: 100%;
-  height: 50%;
-  
-  padding: 0;
-}
-
-.header-info {
-  width: 50%;
-  float: right;
-  position: absolute;
-  top: 70%;
-  right: 2%;
-  z-index: 3;
+  height: 800px;
+  background-color: #000;
 }
 
 .header-info-landing {
-  width: 70%;
-  float: left;
+  width: 100%;
   position: absolute;
-  top: 20%;
-  left: 10%;
+  top: 30%;
   z-index: 3;
 }
 
 .header-info-landing h2 {
-  color: #fff;
-  margin-bottom: 40px;
-  font-size: 100px;
+  color: #fff !important;
+  text-align: center;
+  margin-top: 40px;
   font-weight: 700;
-  font-size: 6vw;
-}
-
-.header-info h2 {
-  color: #fff;
-  margin-bottom: 40px;
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 8vmin;  
 }
 
 .header-btn-landing {
   display: flex;
+  justify-content: center;
+  width: 100%;
+	font-size: 5vw;
+ 	top: 50%;
+  padding-top: 100px;
   position: absolute;
   z-index: 3;
-	font-size: 6vw;
-  top: 60%;
-  left: 12%;
-}
-
-.btn-fav {
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 10px 32px;
-  border-radius: 50px;
-  transition: 0.5s;
-  margin: 0 20px 20px 0;
-  background: rgba(255, 255, 255, 0.5);
-  border: 2px solid #b61251;
-  color: #b61251;
 }
 
 .btn-fav-landing {
@@ -84,101 +51,16 @@
   background: #b61251;
   border: 2px solid #b61251;
   color: #fff;
-  font-size: 2vw;
-}
-
-.btn-fav:hover {
-  background: #b61251;
-  border: 2px solid #b61251;
-  color: #fff;
+  font-size: 4vmin;
 }
 
 .btn-fav-landing:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: #F8EAEF;
   border: 2px solid #b61251;
   color: #b61251;
 }
 
-//SECTION DESCRIPTION
-
-.badge-pill-info {
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: .8px !important;
-  display: inline-block;
-  padding: 10px 20px !important;
-  border-radius: 30px;
-  margin: 2px 5px;
-  border: 2px solid ;
-  background-color: #007bff;
-  color: #fff;
-}
-
-
-//SECTION MAP
-
-.aside-header h4{
-  margin-top: 2rem;
-  font-size: 28px;
-  color: #283d50;
-  text-align: center;
-  font-weight: 500;
-}
-.aside-header p{
-  padding: 10px 26px 10px 26px;
-  color: #556877;
-}
-
-.btn-edit,
-.btn-delete {
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 10px 32px;
-  border-radius: 50px;
-  transition: 0.5s;
-  margin: 0 20px 20px 0;
-}
-
-.btn-edit {
-  background: #18b466;
-  border: 2px solid #18b466;
-  color: #fff;
-}
-
-.btn-edit:hover {
-  background: none;
-  border-color: #556877;
-  color: #556877;
-}
-
-.btn-delete {
-  background: #b42a18;
-  border: 2px solid #b42a18;
-  color: #fff;
-}
-
-.btn-delete:hover {
-  background: none;
-  border-color: #556877;
-  color: #556877;
-}
-
-#carousel-section .carousel-inner {
-	width: 100%;
-  min-width: 100%;
-  height: 725px;
+.carousel-inner {
   max-height: 800px;
-  min-height: 100px;
-  overflow: hidden;
-  object-fit: cover;
+  opacity: 0.60;
 }
-
-#footer {
-	min-height: 80px;
-	background-color: #2E4A5F !important;
-}
-

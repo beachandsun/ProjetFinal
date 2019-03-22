@@ -1,81 +1,35 @@
 
-
-
-  <!--==========================
-  Header
-  ============================-->
-  <header id="header" class="fixed-top">
-    <div class="container">
-
-      <div class="logo float-left">
-         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
-        <a href="#intro" class="scrollto"><img src="../assets/img/logo.png" alt="" class="img-fluid"></a>
-      </div>
-
-      <nav class="main-nav float-right d-none d-lg-block">
-        <ul>
-          <li><%=link_to "Se connecter", new_user_session_path %></li>
-        </ul>
-      </nav> <!--.main-nav -->
-
-    </div>
-  </header> <!-- #header -->
-
+<%= render "layouts/components/navbar"  %>
   
 <section id="carousel-section">  
-  <div id="show-header">
-
-    <div class="header-info-landing text-left img-fluid">
-      <h2>Décrouvrez les plus beaux endroits de Montpellier</h2>
-    </div>  
-    <div class="row header-btn-landing">
+  <div id="show-header-landing">
+    <div class="header-info-landing">
+      <h2>Trouvez votre lieu de travail idéal à Montpellier</h2>
+    </div> 
+    <div class="header-btn-landing">
       <btn><%=link_to "S'inscrire", new_user_registration_path, class:'btn-fav-landing scrollto' %></btn>
-    </div>
-
+    </div> 
+    
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= image_tag "coffee-shop.jpg" %>
+          <%= image_tag "coffee-shop.jpg"  %>
         </div>
         <div class="carousel-item">
-          <%= image_tag "coffee-shop.jpg" %>
+          <%= image_tag "grands-enfants.jpg" %>
         </div>
         <div class="carousel-item">
           <%= image_tag "coffee-shop.jpg" %>
         </div>
       </div>
-    </div>
-
-
+    </div>  
   </div>
+ 
 </section>
+  
+  <%= render "layouts/components/footer"  %>
 
 
 
 
-  <!--==========================
-    Footer
-  ============================-->
-  <footer id="footer">
-
-    <div class="container">
-      <div class="copyright">
-        &copy; TASTE THE RAINBOW
-      </div>
-      <div class="credits">
-        <!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
-          Licensing information: https://bootstrapmade.com/license/
-          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
-        -->
-        
-      </div>
-    </div>
-  </footer><!-- #footer -->
-
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <!-- Uncomment below i you want to use a preloader -->
-  <!-- <div id="preloader"></div> -->
-
+  
