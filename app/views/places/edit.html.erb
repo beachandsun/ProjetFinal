@@ -1,2 +1,44 @@
-<h1>Places#update</h1>
-<p>Find me in app/views/places/update.html.erb</p>
+<div class="form-group">
+    <%= f.label "Name" %>
+    <%= f.text_field :name, class: "form-control" %>
+</div>
+
+<div class="form-group">
+    <%= f.label "Description" %>
+    <%= f.text_field :descritpion, class: "form-control" %>
+</div>
+
+<div class="from-group">
+    <div class="control-label"><h6> Vibe </h6> </div>
+        <label class="custom-switch mt-2">
+          <%= f.check_box :vibe, class: 'custom-switch-input' %>
+          <span class="custom-switch-indicator"></span>
+          <span class="custom-switch-description">Hip hop</span>
+        </label>
+        <label class="custom-switch mt-2">
+          <%= f.check_box :vibe, class: 'custom-switch-input' %>
+          <span class="custom-switch-indicator"></span>
+          <span class="custom-switch-description">Lounge</span>
+        </label>
+        <label class="custom-switch mt-2">
+          <%= f.check_box :vibe, class: 'custom-switch-input' %>
+          <span class="custom-switch-indicator"></span>
+          <span class="custom-switch-description">Classique</span>
+        </label>
+        <label class="custom-switch mt-2">
+          <%= f.check_box :vibe, class: 'custom-switch-input' %>
+          <span class="custom-switch-indicator"></span>
+          <span class="custom-switch-description">Exotique</span>
+        </label>
+        <label class="custom-switch mt-2">
+          <%= f.check_box :vibe, class: 'custom-switch-input' %>
+          <span class="custom-switch-indicator"></span>
+          <span class="custom-switch-description">Pop</span>
+        </label>
+        <label class="custom-switch mt-2">
+          <%= f.check_box :vibe, class: 'custom-switch-input' %>
+          <span class="custom-switch-indicator"></span>
+          <span class="custom-switch-description">Electronique</span>
+        </label>
+    </div>
+  </div>
