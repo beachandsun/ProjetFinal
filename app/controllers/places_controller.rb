@@ -1,6 +1,8 @@
 class PlacesController < ApplicationController
   before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
+
+  
   def index
     @places = Place.all
     @user_like = Like.where(user_id: current_user.id)
@@ -30,18 +32,6 @@ class PlacesController < ApplicationController
     end 
   end
 
-  
-
-  # def update
-  #   @place = Place.find(params[:id])
-  #   if @place.update(name: params[:name], description: params[:description], vibe: params[:vibe], wifi: params[:wifi], price: params[:price], e_outlet: params[:e_outlet], access_handi: params[:access_handi], vegan: params[:vegan])
-  #       @place.save
-  #       redirect_to place_path(@place.id)
-  #   else
-  #     redirect_to root_path
-  #   end
-  # end
-
 
   def update
     @place = Place.find(params[:id])  
@@ -61,7 +51,7 @@ class PlacesController < ApplicationController
 
 
   def place_params
-    params.require(:place).permit(:name, :address_id, :wifi_name, :wifi_password, :smartlock_id, :guide, images: [])
+    params.require(:place).permit(:name, :description, :wifi, :vibe, :vegan, :access_handi, :price, :e_outlet, images: [])
   end
 
 

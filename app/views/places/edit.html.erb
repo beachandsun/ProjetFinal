@@ -5,11 +5,9 @@
 
 <%= form_for @place do |f|%>
   <div class="form-group mt-5">
-  
       <%= f.text_field :name, class: "form-control"%>
   </div>
   <div class="form-group">
-  
       <%= f.text_field :description, class: "form-control" %>
   </div>
   <div class="from-group">
@@ -103,11 +101,11 @@
           <%= file_field_tag :pictures, :multiple => true %>
           <%= submit_tag "mettre à jour" %>
           <% end %>
+          <button type="submit" >Editer</button>
         </div>
       </div>
     </div>
   </section>
 
-  <button type="submit" >Editer</button>
 
 <% end %>
