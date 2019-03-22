@@ -19,7 +19,7 @@ module PlacesHelper
         keep_access_handi_places
         keep_vibe_places
         keep_vegan_places
-        sort_by_distance(@tmp_places).reverse
+        cut_array(sort_by_distance(@tmp_places).reverse)
       end
     
       def placeCloser
@@ -35,6 +35,13 @@ module PlacesHelper
       end
 
       private
+
+      def cut_array(array)
+        if (array.length > 3)
+          return array[0, 3]
+        end
+        return array
+      end
     
       def sort_by_distance(array_of_places)
         array_of_places.sort_by!{ |place| address_of_place(place).bearing_from(address_of_user(current_user))}
