@@ -1,44 +1,111 @@
-<div class="form-group">
-    <%= f.label "Name" %>
-    <%= f.text_field :name, class: "form-control" %>
-</div>
+</br>
+</br>
+</br>
+</br>
 
-<div class="form-group">
-    <%= f.label "Description" %>
-    <%= f.text_field :descritpion, class: "form-control" %>
-</div>
-
-<div class="from-group">
-    <div class="control-label"><h6> Vibe </h6> </div>
-        <label class="custom-switch mt-2">
-          <%= f.check_box :vibe, class: 'custom-switch-input' %>
-          <span class="custom-switch-indicator"></span>
-          <span class="custom-switch-description">Hip hop</span>
-        </label>
-        <label class="custom-switch mt-2">
-          <%= f.check_box :vibe, class: 'custom-switch-input' %>
-          <span class="custom-switch-indicator"></span>
-          <span class="custom-switch-description">Lounge</span>
-        </label>
-        <label class="custom-switch mt-2">
-          <%= f.check_box :vibe, class: 'custom-switch-input' %>
-          <span class="custom-switch-indicator"></span>
-          <span class="custom-switch-description">Classique</span>
-        </label>
-        <label class="custom-switch mt-2">
-          <%= f.check_box :vibe, class: 'custom-switch-input' %>
-          <span class="custom-switch-indicator"></span>
-          <span class="custom-switch-description">Exotique</span>
-        </label>
-        <label class="custom-switch mt-2">
-          <%= f.check_box :vibe, class: 'custom-switch-input' %>
-          <span class="custom-switch-indicator"></span>
-          <span class="custom-switch-description">Pop</span>
-        </label>
-        <label class="custom-switch mt-2">
-          <%= f.check_box :vibe, class: 'custom-switch-input' %>
-          <span class="custom-switch-indicator"></span>
-          <span class="custom-switch-description">Electronique</span>
-        </label>
-    </div>
+<%= form_for @place do |f|%>
+  <div class="form-group mt-5">
+      <%= f.text_field :name, class: "form-control"%>
   </div>
+  <div class="form-group">
+      <%= f.text_field :description, class: "form-control" %>
+  </div>
+  <div class="from-group">
+      <div class="control-label"><h6> Vibe </h6> </div>
+          <label class="custom-switch mt-2">
+            <%= f.check_box :vibe, class: 'custom-switch-input', class: "custom-switch-indicator" %>
+            <!-- <span class="custom-switch-indicator"></span> -->
+            <span class="custom-switch-description">Hip hop</span>
+          </label>
+          <label class="custom-switch mt-2">
+            <%= f.check_box :vibe, class: 'custom-switch-input' %>
+            <!-- <span class="custom-switch-indicator"></span> -->
+            <span class="custom-switch-description">Lounge</span>
+          </label>
+          <label class="custom-switch mt-2">
+            <%= f.check_box :vibe, class: 'custom-switch-input' %>
+            <!-- <span class="custom-switch-indicator"></span> -->
+            <span class="custom-switch-description">Classique</span>
+          </label>
+          <label class="custom-switch mt-2">
+            <%= f.check_box :vibe, class: 'custom-switch-input' %>
+            <!-- <span class="custom-switch-indicator"></span> -->
+            <span class="custom-switch-description">Exotique</span>
+          </label>
+          <label class="custom-switch mt-2">
+            <%= f.check_box :vibe, class: 'custom-switch-input' %>
+            <!-- <span class="custom-switch-indicator"></span> -->
+            <span class="custom-switch-description">Pop</span>
+          </label>
+          <label class="custom-switch mt-2">
+            <%= f.check_box :vibe, class: 'custom-switch-input' %>
+            <!-- <span class="custom-switch-indicator"></span> -->
+            <span class="custom-switch-description">Electronique</span>
+          </label>
+      </div>
+    </div>
+    <div class="from-group">
+        <div class="control-label"><h6> Les caractéristique </h6> </div>
+            <label class="custom-switch mt-2">
+              <%= f.check_box :wifi, class: 'custom-switch-input', class: "custom-switch-indicator" %>
+              <!-- <span class="custom-switch-indicator"></span> -->
+              <span class="custom-switch-description">Wifi</span>
+            </label>
+            <label class="custom-switch mt-2">
+              <%= f.check_box :e_outlet, class: 'custom-switch-input' %>
+              <!-- <span class="custom-switch-indicator"></span> -->
+              <span class="custom-switch-description">Prises éléctriques</span>
+            </label>
+            <label class="custom-switch mt-2">
+              <%= f.check_box :price, class: 'custom-switch-input' %>
+              <!-- <span class="custom-switch-indicator"></span> -->
+              <span class="custom-switch-description">Prix</span>
+            </label>
+            <label class="custom-switch mt-2">
+              <%= f.check_box :vegan, class: 'custom-switch-input' %>
+              <!-- <span class="custom-switch-indicator"></span> -->
+              <span class="custom-switch-description">Vegan</span>
+            </label>
+            <label class="custom-switch mt-2">
+              <%= f.check_box :access_handi, class: 'custom-switch-input' %>
+              <!-- <span class="custom-switch-indicator"></span> -->
+              <span class="custom-switch-description">Acces aux personnes à mobilité réduite</span>
+            </label>
+            <button type="submit", class="btn col-sm-8 btn-success btn-block"> Editer un lieu </button>
+            <!-- <%= submit_tag "Modifier le lieu", class: 'btn col-sm-8 btn-success btn-block' %> -->
+        </div>
+      </div>
+  
+  <!-- UTILISER LE CODE POUR AFFICHER LES IMAGES LIEES AU LIEU -->
+  <section>
+  
+    <div class="container mt-4">
+      <div class="row">
+        <div>
+          <h3>Les photos de cet endroit</h3>
+  
+          <%if @place.pictures.attached?%>
+  
+            <%@place.pictures.each do |pic|%>
+              <%= image_tag pic, alt: 'picture' %>
+            <%end%>
+  
+          <%else%>
+            <p>========== Il n'y a pas encore de photos de cet endroit =========</p>
+            <p>==== Vous avez pris des photos lors de votre dernière visite ? ====</p>
+            <p>======== Postez les pour donner envie aux utilisateurs ! ========</p>
+          <%end%>
+  
+          <h3>Vous souhaitez ajouter des photos ?</h3>
+          <%= form_tag place_pictures_path(@place), multipart: true do %>
+          <%= file_field_tag :pictures, :multiple => true %>
+          <%= submit_tag "mettre à jour" %>
+          <% end %>
+          <button type="submit" >Editer</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<% end %>
