@@ -7,7 +7,7 @@ module PlacesHelper
         src=\"https://www.google.com/maps/embed/v1/place?key=#{ENV['KEY_GOOGLE_MAP']}&q=#{current_address.latitude},#{current_address.longitude}\" allowfullscreen></iframe>"
     end
 
-    def placesMatch
+    def places_match
         @all_places = Array.new
         @select_places = Array.new
         @tmp_places = Array.new 
@@ -23,12 +23,12 @@ module PlacesHelper
         cut_array(sort_by_distance(@tmp_places).reverse)
       end
     
-      def placeCloser
+      def place_closer
         sort_by_distance(@all_places)
         @all_places.last
       end
     
-      def placeTopFav
+      def place_top_fav
         places_all = Array.new
         store_all_places(places_all)
         places_all.sort_by!{|place| place.liked_count}
