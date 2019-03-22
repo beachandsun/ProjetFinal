@@ -13,6 +13,7 @@ module PlacesHelper
         @tmp_places = Array.new 
 
         store_all_places(@all_places)
+        @tmp_places = @all_places
         keep_wifi_places
         keep_price_places
         keep_eOutlet_places
@@ -49,9 +50,11 @@ module PlacesHelper
       end
     
       def keep_wifi_places
-        @all_places.each do |place|
-          if ((place.wifi == current_user.wifi) || (!current_user.wifi))
-            @tmp_places.push(place)
+        @tmp_places.each do |place|
+          if ((place.wifi != current_user.wifi) && (current_user.wifi))
+            if (@tmp_places.length > 3)
+              delete_place_from_array(place, @tmp_places)
+            end
           end
         end
         return nil
