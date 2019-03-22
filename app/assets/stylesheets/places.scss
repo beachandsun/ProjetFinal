@@ -155,14 +155,30 @@ footer h4 {
   flex-direction: column;
   text-align: center;
   border-radius: 50%;
-}
-
-.place-infos .icons-box .icon {
   border: 1px solid #354ded;
 }
 
 .place-infos .icons-box .icon i {
   color: #354ded;
+  font-size: 16px;
+}
+
+.place-infos .icons-box-like .icon {
+  float: left;
+  background: #b61251;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #b61251;
+}
+
+.place-infos .icons-box-like .icon i {
+  color: #fff;
   font-size: 16px;
 }
 

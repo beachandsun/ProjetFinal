@@ -2,6 +2,12 @@ class PlacesController < ApplicationController
   before_action :authenticate_user!
   def index
     @places = Place.all
+    @user_like = Like.where(user_id: current_user.id)
+    @like = []
+    @user_like.each do |like|
+      @like << like.place_id
+    end 
+
   end
 
   def new
@@ -12,6 +18,11 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    @user_like = Like.where(user_id: current_user.id)
+    @like = []
+    @user_like.each do |like|
+      @like << like.place_id
+    end 
   end
 
   
