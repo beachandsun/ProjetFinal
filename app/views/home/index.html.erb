@@ -1,33 +1,44 @@
-
-<%= render "layouts/components/navbar"  %>
-  
 <section id="carousel-section">  
   <div id="show-header-landing">
     <div class="header-info-landing">
-      <h2>Trouvez votre lieu de travail idéal à Montpellier</h2>
+      <h2>A Montpellier mon lieu de travail je l'aime :</h2>
+      <h2>
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner-text">
+          <div class="carousel-item active">
+            <p><mark>Atypique ?</mark></p>
+          </div>
+          <div class="carousel-item">
+            <p><mark>Moderne ?</mark></p>
+          </div>
+          <div class="carousel-item">
+            <p><mark>Décalé ?</mark></p>
+          </div>
+        </div>
+      </div>
+    </h2>
     </div> 
     <div class="header-btn-landing">
-      <btn><%=link_to "S'inscrire", new_user_registration_path, class:'btn-fav-landing scrollto' %></btn>
+      <btn><%=link_to "Trouver mon lieu de travail idéal", new_user_registration_path, class:'btn-fav-landing scrollto' %></btn>
     </div> 
     
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= image_tag "coffee-shop.jpg"  %>
+          <%= image_tag "Hybride.jpg", class:"d-block w-100"  %>
         </div>
         <div class="carousel-item">
-          <%= image_tag "grands-enfants.jpg" %>
+          <%= image_tag "grands-enfants.jpg", class:"d-block w-100" %>
         </div>
         <div class="carousel-item">
-          <%= image_tag "coffee-shop.jpg" %>
+          <%= image_tag "panacee-2.jpg", class:"d-block w-100" %>
         </div>
       </div>
     </div>  
   </div>
- 
 </section>
   
-  <%= render "layouts/components/footer"  %>
+
 
 
 

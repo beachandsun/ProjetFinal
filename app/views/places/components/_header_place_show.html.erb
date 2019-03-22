@@ -1,4 +1,4 @@
-<section class="clearfix carousel-place-show">	
+<section class="clearfix carousel-place-show">
 	<div id="show-header">
 
 		<div class="header-info d-flex">
@@ -9,10 +9,10 @@
 
 			<div class="col-4 header-btn">
 
-				<% if like? %>
-					<%= button_to 'supprimer des favoris', place_like_path(@place, current_like_id), class: "btn-fav scrollto", method: :delete %>
+				<% if @like.include?(@place.id) %>
+					<%= button_to 'Supprimer des favoris', place_like_path(@place, current_like_id), class: "btn-fav scrollto", method: :delete %>
 				<% else %>
-					<%= button_to icon('fas', 'heart'), place_likes_path(@place), class: "btn-fav scrollto", method: :post %>
+					<%= button_to "Ajouter aux favoris", place_likes_path(@place), class: "btn-fav scrollto", method: :post %>
 				<% end %>
 			</div>
 
@@ -21,27 +21,51 @@
 		<% if current_user.try(:admin?) %>
 		<div class="row admin-header-btn">
 
-				<div>
-					<a href="#" class="btn-edit scrollto">Modifier les informations</a>
-					<a href="#" class="btn-delete scrollto">Supprimer ce lieu</a>
-				</div>
+			<div>
+				<%= link_to 'edit', edit_place_path(@place.id), class:"btn btn-success scrollto"%>
+				<a href="#" class="btn-delete scrollto">Supprimer ce lieu</a>
+			</div>
 
 		</div>
 		<% end %>
 
 		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+			<% if @place.pictures.attached? %>
+
+			<ol class="carousel-indicators">
+				<% @place.pictures.each_with_index do |photo, n| %>
+				<li data-target='#MyCarousel' data-slide-to="#{n}" class="#{'active' if n == 0}"></li>
+				<% end %>
+			</ol>
+
+			<div class="carousel-inner">
+
+				<div class="carousel-item active">
+					<%= image_tag @place.pictures.first, alt: 'picture', class:"d-block w-100"  %>
+				</div>
+
+				<% @place.pictures.drop(1).each do |pic| %>
+				<div class="carousel-item">
+					<%= image_tag pic, alt: 'picture', class:"d-block w-100" %>
+				</div>
+				<% end %>
+			</div>
+
+			<% else %>
+
 			<div class="carousel-inner">
 				<div class="carousel-item active">
 					<%= image_tag "coffee-shop.jpg", class:"d-block w-100" %>
 				</div>
 				<div class="carousel-item">
-					<%= image_tag "coffee-shop.jpg", class:"d-block w-100" %>
-				</div>
-				<div class="carousel-item">
-					<%= image_tag "coffee-shop.jpg", class:"d-block w-100" %>
+					<%= image_tag "grands-enfants.jpg", class:"d-block w-100" %>
 				</div>
 			</div>
+
+			<% end %>
+
 		</div>
+	</div>
 
 
 	</div>

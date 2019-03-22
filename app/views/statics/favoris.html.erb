@@ -1,27 +1,34 @@
+<section class="matches-index pt-5">
+	<div class="container">
+
+<% if @likes.empty? %>
+<h2>Vous n'avez pas de favoris</h2>
+<% else %>
+
 <div class="row matches">
-  <% places_match.each do |place| %>
+  <% @likes.each do |like| %>
 
   <div class="col-lg-4 col-md-6 matches-item">
     <div class="card text-white">
-        <% if place.pictures.attached? %>
+        <% if like.place.pictures.attached? %>
         <%= image_tag place.pictures.first, class:"d-block w-100 card-bg-img" %>
         <% else %>
         <%= image_tag "coffee-shop.jpg", class:"d-block w-100 card-bg-top" %>
       <% end %>
       <div class="place-infos">
         <div class="col-6 place-title">
-          <h5 class="card-title"><%= link_to place.name, place_path(place.id) %></h5>
+          <h5 class="card-title"><%= link_to like.place.name, place_path(like.place) %></h5>
         </div>
         <div class="col-6 place-badges">
           <div class="d-flex justify-content-around align-items-center pb-2">
-            <% if place.wifi %>
+            <% if like.place.wifi %>
             <div class="icons-box">
               <div class="icon">
                 <i class="fas fa-wifi"></i>
               </div>
             </div>
             <% end %>
-            <% if place.e_outlet %>
+            <% if like.place.e_outlet %>
             <div class="icons-box">
               <div class="icon">
                 <i class="fas fa-plug"></i>
@@ -29,17 +36,9 @@
             </div>
             <% end %>
           </div>
-          <div class="place-like">
-             <% if @like.include?(place.id) %>
-              <div class="icons-box-like">
-                <div class="icon">
-                  <i class="fas fa-heart"></i>
-                </div>
-              </div>
-              <% end %>
-            </div>  
+          
           <div class="d-flex justify-content-center">
-            <span class="badge badge-pill badge-pill-info"><i class="fas fa-music"></i> <%= place.vibe %></span>
+            <span class="badge badge-pill badge-pill-info"><i class="fas fa-music"></i> <%= like.place.vibe %></span>
           </div>
         </div>
       </div>
@@ -48,3 +47,7 @@
 
   <% end %>
 </div>
+
+<% end %>
+	</div>
+</section>

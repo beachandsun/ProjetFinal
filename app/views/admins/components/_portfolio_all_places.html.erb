@@ -1,0 +1,33 @@
+<div class="row all-places">
+  <% @places.each do |place| %>
+
+  <div class="col-lg-4 col-md-6 place-card d-flex">
+
+    <div class="card text-white">
+        <% if place.pictures.attached? %>
+          <%= image_tag place.pictures.first, class:"d-block w-100 card-bg-img" %>
+            <% else %>
+        <%= image_tag "coffee-shop.jpg", class:"d-block w-100 card-bg-top" %>
+            <% end %>
+      <div class="place-infos">
+          <h5 class="card-title"><%= link_to place.name, place_path(place.id) %></h5>
+      </div>
+    </div>
+
+    <div>
+      <div class="icons-box">
+        <div class="icon edit-icon">
+          <i class="fas fa-pencil-alt"></i>
+        </div>
+      </div>
+      <div class="icons-box">
+        <div class="icon delete-icon">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <% end %>
+</div>

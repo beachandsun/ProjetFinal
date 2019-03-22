@@ -155,15 +155,42 @@ footer h4 {
   flex-direction: column;
   text-align: center;
   border-radius: 50%;
-}
-
-.place-infos .icons-box .icon {
   border: 1px solid #354ded;
 }
 
 .place-infos .icons-box .icon i {
   color: #354ded;
   font-size: 16px;
+}
+
+.place-like {
+  position: absolute;
+  left: 60px;
+  bottom: 150px;
+  padding: 1.25rem 1.25rem 0.5rem 1.25rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.place-like .icons-box-like .icon {
+  float: left;
+  background: #b61251;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #b61251;
+}
+
+.place-like .icons-box-like .icon i {
+  color: #fff;
+  font-size: 24px;
 }
 
 .place-infos .badge-pill-info {
@@ -195,6 +222,14 @@ footer h4 {
   color: #fff !important;
 }
 
+.portfolio-wrap h5 a {
+  color: #354ded !important;
+}
+
+.portfolio-wrap .card {
+  
+}
+
 
 
 
@@ -209,9 +244,13 @@ footer h4 {
   max-height: 500px;
 }
 
+.carousel-place-show .carousel {
+  background-color: #000;
+}
+
 .carousel-place-show .carousel-inner {
   max-height: 500px !important;
-  opacity: 0.80 !important;
+  opacity: 0.85 !important;
 }
 
 .header-info {
@@ -397,4 +436,36 @@ footer h4 {
 
 .member-info h4, .member-info span {
   color: #002259 !important
+}
+
+
+
+// ADMIN DASHBOARD //
+.place-card .card-title {
+  font-size: 1.3rem;
+}
+
+.place-card .edit-icon,
+.place-card .delete-icon {
+  width: 34px;
+  height: 34px;
+  margin: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.place-card .edit-icon {
+  border: 2px solid #354ded;
+}
+
+.place-card .edit-icon i {
+  color: #354ded;
+  font-size: 18px;
+}
+
+.place-card .delete-icon {
+  border: 2px solid #354ded;
+}
+
+.place-card .delete-icon i {
+  color: #354ded;
+  font-size: 18px;
 }
