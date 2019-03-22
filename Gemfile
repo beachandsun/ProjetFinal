@@ -29,6 +29,8 @@ gem 'devise'
 gem 'byebug'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+gem 'rb-readline'
+gem 'table_print'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -75,3 +77,6 @@ gem "aws-sdk-s3", require: false
 gem 'aws-sdk', '~> 3' 
 gem 'faker'
 gem 'table_print'
+gem 'mail'
+gem 'rb-readline'
+gem 'font-awesome-sass'

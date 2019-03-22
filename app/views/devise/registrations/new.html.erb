@@ -1,99 +1,143 @@
-<h2>Sign up</h2>
+<section class="mt-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="card">
+        <div class="card-body">
+
+          <h5 class="card-title">Inscription</h5>
+          <%# <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> %>
+          <%# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> %>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <div class="field form-group">
+              <div class="">
+                <%= f.label :email , class: 'controle-label'%>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              </div>
+            </div>
+            <div class="field form-group">
+              <div class="">
+                <%= f.label :password %>
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="field form-group">
+              <div class="">
+                <%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: "form-control", required: ""%>
+              </div>
+            </div>
+
+            <h3> Address </h3>
+            <div class="field form-group">
+              <div class="">
+                <%= f.fields_for :address_attributes do |user_address_form| %>
+                <%= user_address_form.text_field :address_number, class: "form-control", placeholder: "Numéro de rue" %>
+                <%= user_address_form.text_field :address_main, class: "form-control", placeholder: "Nom de rue" %>
+                <%-#= user_address_form.text_field :address_complement_1, class: "form-control", placeholder: "Address_complement_1" -%>
+                <%-#= user_address_form.text_field :address_complement_2, class: "form-control", placeholder: "Address_complement_2" -%>
+                <%= user_address_form.text_field :city, class: "form-control", placeholder: "Ville" %>
+                <%= user_address_form.text_field :postal_code, class: "form-control", placeholder: "Code" %>
+                <%-#= user_address_form.text_field :country, class: "form-control", placeholder: "Country" -%>
+
+                <% end %>
+              </div>
+            </div>
+            <!--- from for vibe --->
+            <div class="from-group">
+              <div class="control-label"><h6> Vibe </h6> </div>
+                  <label class="custom-switch mt-2">
+                    <%= f.check_box :vibe, class: 'custom-switch-input' %>
+                    <span class="custom-switch-indicator"></span>
+                    <span class="custom-switch-description">Hip hop</span>
+                  </label>
+                  <label class="custom-switch mt-2">
+                    <%= f.check_box :vibe, class: 'custom-switch-input' %>
+                    <span class="custom-switch-indicator"></span>
+                    <span class="custom-switch-description">Lounge</span>
+                  </label>
+                  <label class="custom-switch mt-2">
+                    <%= f.check_box :vibe, class: 'custom-switch-input' %>
+                    <span class="custom-switch-indicator"></span>
+                    <span class="custom-switch-description">Classique</span>
+                  </label>
+                  <label class="custom-switch mt-2">
+                    <%= f.check_box :vibe, class: 'custom-switch-input' %>
+                    <span class="custom-switch-indicator"></span>
+                    <span class="custom-switch-description">Exotique</span>
+                  </label>
+                  <label class="custom-switch mt-2">
+                    <%= f.check_box :vibe, class: 'custom-switch-input' %>
+                    <span class="custom-switch-indicator"></span>
+                    <span class="custom-switch-description">Pop</span>
+                  </label>
+                  <label class="custom-switch mt-2">
+                    <%= f.check_box :vibe, class: 'custom-switch-input' %>
+                    <span class="custom-switch-indicator"></span>
+                    <span class="custom-switch-description">Electronique</span>
+                  </label>
+              </div>
+            </div>
 
 
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-<div>
-<%= f.label "first_name" %>
-<%= f.text_field :first_name %>
-</div>
-<div>
-<%= f.label "last_name" %>
-<%= f.text_field :last_name %>
-</div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <!-- Form for Preferences -->
+            <div class="from-group">
+              <div class="control-label mt-2"><h6> Préférences </h6> </div>
+                  <label class="custom-switch mt-2">
+                    <%= f.check_box :wifi, class: 'custom-switch-input' %>
+                    <span class="custom-switch-indicator"></span>
+                    <span class="custom-switch-description">Wifi</span>
+                  </label>
+                  <label class="custom-switch mt-2">
+                    <%= f.check_box :price, class: 'custom-switch-input' %>
+                    <span class="custom-switch-indicator"></span>
+                    <span class="custom-switch-description">Prix</span>
+                  </label>
+                  <label class="custom-switch mt-2">
+                    <%= f.check_box :e_outlet, class: 'custom-switch-input' %>
+                    <span class="custom-switch-indicator"></span>
+                    <span class="custom-switch-description">Prise électrique</span>
+                  </label>
+                  <label class="custom-switch mt-2">
+                    <%= f.check_box :access_handi, class: 'custom-switch-input' %>
+                    <span class="custom-switch-indicator"></span>
+                    <span class="custom-switch-description">Acces personne à mobilité réduite</span>
+                  </label>
+                  <label class="custom-switch mt-2">
+                    <%= f.check_box :wifi, class: 'custom-switch-input' %>
+                    <span class="custom-switch-indicator"></span>
+                    <span class="custom-switch-description">Vegan</span>
+                  </label>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div>
-<%= f.label "wifi" %>
-<%= f.check_box :wifi %>
-</div>
-<div>
-<%= f.label 'price' %>
-<%= f.check_box :price %>
-</div>
-<div>
-<%= f.label 'e_outlet' %>
-<%= f.check_box :e_outlet%>
-</div>
-
-<div>
-<%= f.label 'access_handi' %>
-<%= f.check_box :access_handi %>
-</div>
-<div>
-<%= f.label 'vibe'%>
-
-    <label class="checkbox-inline">
-      <%= f.check_box :vibe %>Hip Hop
-    </label>
-    <label class="checkbox-inline">
-      <%= f.check_box :vibe %>Lounge
-    </label>
-    <label class="checkbox-inline">
-      <%= f.check_box :vibe %>Classic
-    </label>
-     <label class="checkbox-inline">
-      <%= f.check_box :vibe %>Exotic 
-    </label>
-     <label class="checkbox-inline">
-      <%= f.check_box :vibe %>Pop
-    </label>
-     <label class="checkbox-inline">
-      <%= f.check_box :vibe %>Electronic
-    </label>
-  
-</div>
-
-<div>
-<%= f.label 'vegan' %>
-<%= f.check_box :vegan %>
-</div>
-
-<h3> Address </h3>
-
- <%= f.fields_for :address_attributes do |user_address_form| %>
- <%= user_address_form.text_field :address_number, class: "form-control", placeholder: "Address_number" %>
- <%= user_address_form.text_field :address_main, class: "form-control", placeholder: "Address_main" %>
- <%= user_address_form.text_field :address_complement_1, class: "form-control", placeholder: "Address_complement_1" %>
- <%= user_address_form.text_field :address_complement_2, class: "form-control", placeholder: "Address_complement_2" %>
- <%= user_address_form.text_field :city, class: "form-control", placeholder: "City" %>
- <%= user_address_form.text_field :postal_code, class: "form-control", placeholder: "Postal_code" %>
- <%= user_address_form.text_field :country, class: "form-control", placeholder: "Country" %>
-
-
+<div class="row justify-content-center">
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: 'btn btn-success'%>
   </div>
-<% end %>
+</div>
+<div class="row justify-content-center">
+  <div class="actions">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
 
 <% end %>
-<%= render "devise/shared/links" %>
+
+
+
+
+
+
+
+
 

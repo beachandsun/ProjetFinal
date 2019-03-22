@@ -47,10 +47,15 @@ Place.destroy_all
 puts "Clean done"
 
 puts "Create addresses"
-10.times do
-	address = Address.create(address_number: Faker::Address.building_number, address_main: Faker::Address.street_name, city: "Montpellier", postal_code: "34000", country: "France") 
+2.times do
+	address = Address.create(address_number: "2", address_main: "allee joseph cambon", city: "saint-jean-de-vedas", postal_code: "34430", country: "France") 
 end
-add = Address.create(address_number: "202", address_main: "rue de la croix du sud", city: "Montpellier", postal_code: "34000", country: "France")
+2.times do
+	address = Address.create(address_number: "202", address_main: "rue de la croix du sud", city: "Montpellier", postal_code: "34000", country: "France") 
+end
+2.times do
+	address = Address.create(address_number: "6", address_main: "avenue danton demar", city: "cournonterral", postal_code: "34660", country: "France") 
+end
 puts "Adresses created"
 
 puts "Create users"
@@ -60,9 +65,10 @@ puts "Create users"
 puts "Users created"	
 
 puts "Create places"
-5.times do
+15.times do
 		place = Place.create(name: Faker::Coffee.blend_name, description: Faker::Movies::HarryPotter.quote, phone_number: 456748394, wifi: [true, false].sample, price: [true, false].sample, e_outlet: [true, false].sample, access_handi: [true, false].sample, vibe: ["hip_hop", "classic", "exotique", "lounge", "electronique", "pop"].sample, vegan: [true, false].sample, address_id: rand(Address.all.first.id..Address.all.last.id))
 	end
-	place2 = Place.create(name: Faker::Coffee.blend_name, description: Faker::Movies::HarryPotter.quote, phone_number: 456748394, wifi: [true, false].sample, price: [true, false].sample, e_outlet: [true, false].sample, access_handi: [true, false].sample, vibe: ["hip_hop", "classic", "exotique", "lounge", "electronique", "pop"].sample, vegan: [true, false].sample, address_id: Address.all.last.id)
+#	place2 = Place.create(name: Faker::Coffee.blend_name, description: Faker::Movies::HarryPotter.quote, phone_number: 456748394, wifi: [true, false].sample, price: [true, false].sample, e_outlet: [true, false].sample, access_handi: [true, false].sample, vibe: ["hip_hop", "classic", "exotique", "lounge", "electronique", "pop"].sample, vegan: [true, false].sample, address_id: Address.all.last.id)
+	
 puts "Places created"
 

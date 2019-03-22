@@ -1,3 +1,4 @@
+
     <%= render "places/components/header_place_show"  %>
 
 <section id="about">
@@ -5,31 +6,36 @@
 
 		<header class="section-header">
 			<h3>Découvrir l'endroit</h3><br>
+			
 		</header>
 
     <%= render "places/components/presentation_place"  %>
 
     <%= render "places/components/location_place"  %>
-		<% if current_user.admin? %>
+		<% if current_user.try(:admin?) %>
 		<div class="row w-100 mt-5 ml-4 d-flex justify-content-end">
 				<a href="#" class="btn-edit scrollto">Modifier les informations</a>
 				<a href="#" class="btn-delete scrollto">Supprimer ce lieu</a>
+				
 		</div>
 		<% end %>
 
 	</div>
 </section>
 
-<!-- UTILISER LE CODE POUR AFFICHER LES IMAGES LIEES AU LIEU -->
+<!-- UTILISER LE CODE POUR AFFICHER LES IMAGES LIEES AU LIEU 
 <section>
 	<div class="container mt-4">
 		<div class="row">
 			<div>
 				<h3>Les photos de cet endroit</h3>
+
 				<%if @place.pictures.attached?%>
+
 					<%@place.pictures.each do |pic|%>
 						<%= image_tag pic, alt: 'picture' %>
 					<%end%>
+
 				<%else%>
 					<p>========== Il n'y a pas encore de photos de cet endroit =========</p>
 					<p>==== Vous avez pris des photos lors de votre dernière visite ? ====</p>
@@ -45,6 +51,7 @@
 		</div>
 	</div>
 </section>
+-->
 
 
 <%= render "places/components/comments"  %>

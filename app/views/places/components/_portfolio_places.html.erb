@@ -1,18 +1,44 @@
-<% Place.all.each do |place| %>
-  <%@place = place%>
-  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    <div class="portfolio-wrap">
-      <img src="../assets/img/portfolio/app1.jpg" class="img-fluid" alt="">
-      <div class="portfolio-info">
-        <h4><%= link_to place.name, place_path(@place.id) %></a></h4>
-        <p><%= place.description %></p>
-        <div>
-          <a href="../assets/img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-          <%if place.wifi%>
-            <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-          <%end%>
+<div class="row matches">
+  <% placesMatch.each do |place| %>
+
+  <div class="col-lg-4 col-md-6 matches-item">
+    <div class="card text-white">
+      <%= image_tag "coffee-shop.jpg", class:"d-block w-100 card-bg-img" %>
+      <div class="place-infos">
+        <div class="col-6 place-title">
+          <h5 class="card-title"><%= link_to place.name, place_path(place.id) %></h5>
+        </div>
+        <div class="col-6 place-badges">
+          <div class="d-flex justify-content-around align-items-center pb-2">
+            <% if place.wifi %>
+            <div class="icons-box">
+              <div class="icon">
+                <i class="fas fa-wifi"></i>
+              </div>
+            </div>
+            <% end %>
+            <% if place.e_outlet %>
+            <div class="icons-box">
+              <div class="icon">
+                <i class="fas fa-plug"></i>
+              </div>
+            </div>
+            <% end %>
+           <% if @like.include?(place.id) %>
+            <div class="icons-box-like">
+              <div class="icon">
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <div class="d-flex justify-content-center">
+            <span class="badge badge-pill badge-pill-info"><i class="fas fa-music"></i> <%= place.vibe %></span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-<%end%>
+
+  <% end %>
+</div>
