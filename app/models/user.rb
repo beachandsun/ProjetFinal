@@ -10,7 +10,7 @@ class User < ApplicationRecord
          has_many :likes, dependent: :destroy
          accepts_nested_attributes_for :address
 
-         
+  after_create :welcome_send       
   def edit
   end
 
