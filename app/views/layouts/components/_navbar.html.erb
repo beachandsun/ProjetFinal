@@ -12,7 +12,8 @@
         <%if user_signed_in?%>
           <li><%= link_to "Accueil", places_path %></li>
           <li><%= link_to "L'équipe", statics_team_path %></li>
-          <li><%=link_to "Mon profil", user_path(current_user.id) %></li>
+          <li><%= link_to "Mes favoris", statics_favoris_path %></li>
+          <li><%=link_to "Mon profil", edit_user_registration_path %></li>
           <li><%=link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
         <%else%>
           <li><%=link_to "Se connecter", new_user_session_path %></li>
