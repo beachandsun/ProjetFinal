@@ -65,9 +65,10 @@ puts "Create users"
 puts "Users created"	
 
 puts "Create places"
-5.times do
+15.times do
 		place = Place.create(name: Faker::Coffee.blend_name, description: Faker::Movies::HarryPotter.quote, phone_number: 456748394, wifi: [true, false].sample, price: [true, false].sample, e_outlet: [true, false].sample, access_handi: [true, false].sample, vibe: ["hip_hop", "classic", "exotique", "lounge", "electronique", "pop"].sample, vegan: [true, false].sample, address_id: rand(Address.all.first.id..Address.all.last.id))
 	end
-	place2 = Place.create(name: Faker::Coffee.blend_name, description: Faker::Movies::HarryPotter.quote, phone_number: 456748394, wifi: [true, false].sample, price: [true, false].sample, e_outlet: [true, false].sample, access_handi: [true, false].sample, vibe: ["hip_hop", "classic", "exotique", "lounge", "electronique", "pop"].sample, vegan: [true, false].sample, address_id: Address.all.last.id)
+#	place2 = Place.create(name: Faker::Coffee.blend_name, description: Faker::Movies::HarryPotter.quote, phone_number: 456748394, wifi: [true, false].sample, price: [true, false].sample, e_outlet: [true, false].sample, access_handi: [true, false].sample, vibe: ["hip_hop", "classic", "exotique", "lounge", "electronique", "pop"].sample, vegan: [true, false].sample, address_id: Address.all.last.id)
+	
 puts "Places created"
 

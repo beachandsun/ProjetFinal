@@ -23,3 +23,398 @@
 
 
  */
+
+
+// GENERAL //
+
+body {
+  color: #494c4f !important;
+  background-color: #fff !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #494c4f !important ;
+}
+
+.app-content {
+  flex: 1 0 auto !important;
+}
+
+.main-nav a {
+  color: #002259 !important;
+}
+
+.main-nav a:hover {
+  color: #354ded !important;
+}
+
+.mobile-nav a {
+  display: block;
+  position: relative;
+  color: #fff;
+  padding: 15px 25px !important;
+  font-weight: 500;
+  font-size: 20px !important;
+}
+
+footer {
+  flex-shrink: 0 !important;
+  position: static !important;
+}
+
+footer h3 {
+  color: #fff !important;
+}
+
+footer h4 {
+  padding-top: 10px !important;
+  color: #fff !important;
+}
+
+.footer-links ul a:hover {
+  color: #354ded !important;
+}
+
+.footer-contact a {
+  color: #fff;
+}
+
+.footer-contact a:hover {
+  color: #354ded !important;
+}
+
+
+
+// PLACES#INDEX //
+.matches-index h1 {
+  text-align: center;
+  margin: 2rem 0rem 3rem 0rem;
+}
+
+.matches-index h3 {
+  font-weight: 500;
+  padding: 1rem;
+}
+
+// PORTFOLIO //
+
+#portfolio {
+  margin: 3rem 0 2rem 0 !important;
+  padding: 60px 0 0 0 !important;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+.card-bg-img {
+  opacity: 0.85;
+  border-radius: 6px;
+}
+
+.place-infos {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 1.25rem 1.25rem 0.5rem 1.25rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.place-infos .place-title {
+  display: flex;
+  align-items: center;
+}
+
+.place-infos .card-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.place-infos .card-title a {
+  color: #fff;
+  font-weight: 600;
+}
+
+.place-infos .icons-box {
+  background: none;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.place-infos .icons-box .icon {
+  float: left;
+  background: #f4f9ff;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #354ded;
+}
+
+.place-infos .icons-box .icon i {
+  color: #354ded;
+  font-size: 16px;
+}
+
+.place-infos .icons-box-like .icon {
+  float: left;
+  background: #b61251;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #b61251;
+}
+
+.place-infos .icons-box-like .icon i {
+  color: #fff;
+  font-size: 16px;
+}
+
+.place-infos .badge-pill-info {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .8px !important;
+  border-radius: 30px;
+  padding: 0.4rem 0.8rem !important;
+  color: #f4f9ff;
+  background-color: #354ded;
+  border: none;
+  margin: 0;
+}
+
+.place-badges {
+  width: 100%;
+}
+
+// PROMOTED PLACES
+
+#portfolio-flters li {
+  background: #f4f9ff !important;
+  color: #354ded !important;
+}
+
+#portfolio-flters li:hover {
+  background: #354ded !important;
+  color: #fff !important;
+}
+
+
+
+
+// PLACES#SHOW //
+
+//HEADER
+.carousel-place-show #show-header {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  padding: 0;
+  max-height: 500px;
+}
+
+.carousel-place-show .carousel {
+  background-color: #000;
+}
+
+.carousel-place-show .carousel-inner {
+  max-height: 500px !important;
+  opacity: 0.85 !important;
+}
+
+.header-info {
+  width: 100%;
+  position: absolute;
+  top: 65%;
+  z-index: 3;
+}
+
+.header-info h2 {
+  color: #fff !important;
+  margin: 0;
+  padding-left: 2rem;
+  font-size: 4rem;
+  font-weight: 700;
+  display: block;
+}
+
+.header-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.btn-fav {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  background: #b61251;
+  border: 2px solid #b61251;
+  color: #fff;
+}
+
+.btn-fav:hover {
+  background: #f8eaef;
+  border: 2px solid #b61251;
+  color: #b61251;
+}
+
+.admin-header-btn {
+  width: 100%;
+  position: absolute;
+  top: 85%;
+  z-index: 3;
+  justify-content: flex-end;
+  margin: 0 !important;
+}
+
+.btn-edit,
+.btn-delete {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 0 20px 0 0;
+}
+
+.btn-edit {
+  background: #18b466;
+  border: 2px solid #18b466;
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background: none;
+  border-color: #18b466;
+  color: #18b466;
+  background: #fff;
+}
+
+.btn-delete {
+  background: #d63131;
+  border: 2px solid #d63131;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background: none;
+  border-color: #d63131;
+  color: #d63131;
+  background: #fff;
+}
+
+
+
+//SECTION DESCRIPTION
+
+.icons-box {
+  background: #fff;
+  background-size: cover;
+  padding: 0 0 30px 0;
+}
+
+.icons-box .icon,
+.icons-box .icon-false {
+  float: left;
+  background: #fff;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.icons-box .icon {
+  border: 2px solid #007bff;
+}
+
+.icons-box .icon i {
+  color: #007bff;
+  font-size: 24px;
+}
+
+.icon-false {
+  border: 2px solid #c4c4c4;
+}
+
+.icons-box .icon-false i {
+  color: #c4c4c4;
+  font-size: 24px;
+}
+
+.place-description .badge-pill-info,
+.place-description .badge-pill-false {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .8px !important;
+  display: inline-block;
+  padding: 10px 20px !important;
+  border-radius: 30px;
+  margin: 2px 5px;
+  border: 2px solid ;
+  color: #fff;
+}
+
+.place-description .badge-pill-info {
+  background-color: #007bff;
+}
+
+.place-description .badge-pill-false {
+  background-color: #c4c4c4;
+}
+
+//SECTION MAP
+
+.place-location h4{
+  margin-top: 2rem !important;
+  font-size: 28px !important;
+  color: #283d50 !important;
+  font-weight: 500 !important;
+  padding: 0 0 0 1rem; 
+}
+
+
+
+// TEAM PAGE // 
+
+.team-page .member {
+  padding: 1rem;
+  text-align: center;
+}
+
+.team-page img {
+  border-radius: 50%;
+}
+
+.member-info {
+  margin-top: 1rem;
+}
+
+.member-info h4, .member-info span {
+  color: #002259 !important
+}
