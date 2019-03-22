@@ -10,13 +10,13 @@
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
             <div class="field form-group">
-              <div class="col-sm-12">
+              <div class="">
                 <%= f.label :email , class: 'controle-label'%>
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
               </div>
             </div>
             <div class="field form-group">
-              <div class="col-sm-12">
+              <div class="">
                 <%= f.label :password %>
                 <% if @minimum_password_length %>
                 <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -26,7 +26,7 @@
             </div>
 
             <div class="field form-group">
-              <div class="col-sm-12">
+              <div class="">
                 <%= f.label :password_confirmation %><br />
                 <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: "form-control", required: ""%>
               </div>
@@ -34,7 +34,7 @@
 
             <h3> Address </h3>
             <div class="field form-group">
-              <div class="col-sm-12">
+              <div class="">
                 <%= f.fields_for :address_attributes do |user_address_form| %>
                 <%= user_address_form.text_field :address_number, class: "form-control", placeholder: "Numéro de rue" %>
                 <%= user_address_form.text_field :address_main, class: "form-control", placeholder: "Nom de rue" %>
@@ -86,7 +86,7 @@
 
             <!-- Form for Preferences -->
             <div class="from-group">
-              <div class="control-label"><h6> Préférences </h6> </div>
+              <div class="control-label mt-2"><h6> Préférences </h6> </div>
                   <label class="custom-switch mt-2">
                     <%= f.check_box :wifi, class: 'custom-switch-input' %>
                     <span class="custom-switch-indicator"></span>
