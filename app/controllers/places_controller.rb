@@ -1,5 +1,6 @@
 class PlacesController < ApplicationController
   before_action :authenticate_user!
+  skip_before_action :verify_authenticity_token
   def index
     @places = Place.all
     @user_like = Like.where(user_id: current_user.id)
@@ -17,7 +18,7 @@ class PlacesController < ApplicationController
   end
 
   def edit
-    @places = Place.find(params[:id])  
+    @place = Place.find(params[:id])  
   end
 
   def show
@@ -31,22 +32,37 @@ class PlacesController < ApplicationController
 
   
 
+  # def update
+  #   @place = Place.find(params[:id])
+  #   if @place.update(name: params[:name], description: params[:description], vibe: params[:vibe], wifi: params[:wifi], price: params[:price], e_outlet: params[:e_outlet], access_handi: params[:access_handi], vegan: params[:vegan])
+  #       @place.save
+  #       redirect_to place_path(@place.id)
+  #   else
+  #     redirect_to root_path
+  #   end
+  # end
+
+
   def update
-    @place = Place.find(params[:id])
-    if @place.update(params.require(:place).permit(:content))
-      @place.pictures.attach(params[:comment][:pictures])
-      redirect_to place_path(@place.id)
-    elsif @place.update(name: params[:name], descritpion: params[:description], vibe: params[:vibe], wifi: params[:wifi], price: params[:price], e_outlet: params[:e_outlet], acces_handi: params[:acces_handi], vegan: params[:vegan])
-        flash[:succes] = "Event Update"
-        redirect_to place_path(@place.id)
-    else
-      render root_path
+    @place = Place.find(params[:id])  
+    respond_to do |format|
+      if @place.update(place_params)
+        format.html { redirect_to place_path(@place) }
+        # format.json { render :edit, status: :ok }
+      else
+        format.html { render :edit }
+        # format.json { render json: @place.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def delete
   end
 
+
+  def place_params
+    params.require(:place).permit(:name, :address_id, :wifi_name, :wifi_password, :smartlock_id, :guide, images: [])
+  end
 
 
 end
