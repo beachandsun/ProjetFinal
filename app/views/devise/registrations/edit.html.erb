@@ -1,167 +1,113 @@
-<section class="mt-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="card">
-        <div class="card-body">
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-          <h5 class="card-title">Edit <%= resource_name.to_s.humanize %></h5>
-          <%# <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> %>
-          <%# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
 
-            </div>
-            <div class="field form-group">
-                <%= f.label "Prénom" %>
-                <%= f.text_field :first_name, class: "form-control" %>
-            </div>
-
-            <div class="field form-group">
-              <%= f.label "Nom" %>
-              <%= f.text_field :last_name, class:"form-control" %>
-            </div>
-            <div class="fiel form-group">
-                <%= f.label :email , class: 'controle-label'%>
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-              </div>
-            <div class="field form-group">
-                <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-                <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
-                <% if @minimum_password_length %>
-                  <br />
-                  <em><%= @minimum_password_length %> characters minimum</em>
-                <% end %>
-            </div>
-
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-            <% end %>
-              <div class="field form-group">
-                <%= f.label :password_confirmation %><br />
-                <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: "form-control", required: ""%>
-                <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-                <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
-              </div>
-            </div>
-
-
-            <h3> Address </h3>
-            <div class="field form-group">
-              <div class="">
-                <%= f.fields_for :address_attributes do |user_address_form| %>
-                <%= user_address_form.text_field :address_number, class: "form-control", placeholder: "Numéro de rue" %>
-                <%= user_address_form.text_field :address_main, class: "form-control", placeholder: "Nom de rue" %>
-                <%-#= user_address_form.text_field :address_complement_1, class: "form-control", placeholder: "Address_complement_1" -%>
-                <%-#= user_address_form.text_field :address_complement_2, class: "form-control", placeholder: "Address_complement_2" -%>
-                <%= user_address_form.text_field :city, class: "form-control", placeholder: "Ville" %>
-                <%= user_address_form.text_field :postal_code, class: "form-control", placeholder: "Code" %>
-                <%-#= user_address_form.text_field :country, class: "form-control", placeholder: "Country" -%>
-
-                <% end %>
-              </div>
-            </div>
-            <!--- from for vibe --->
-            <div class="from-group">
-                <div class="control-label"><h6> Vibe </h6> </div>
-                    <label class="custom-switch mt-2">
-                      <%= f.check_box :vibe, class: 'custom-switch-input' %>
-                      <span class="custom-switch-indicator"></span>
-                      <span class="custom-switch-description">Hip hop</span>
-                    </label>
-                    <label class="custom-switch mt-2">
-                      <%= f.check_box :vibe, class: 'custom-switch-input' %>
-                      <span class="custom-switch-indicator"></span>
-                      <span class="custom-switch-description">Lounge</span>
-                    </label>
-                    <label class="custom-switch mt-2">
-                      <%= f.check_box :vibe, class: 'custom-switch-input' %>
-                      <span class="custom-switch-indicator"></span>
-                      <span class="custom-switch-description">Classique</span>
-                    </label>
-                    <label class="custom-switch mt-2">
-                      <%= f.check_box :vibe, class: 'custom-switch-input' %>
-                      <span class="custom-switch-indicator"></span>
-                      <span class="custom-switch-description">Exotique</span>
-                    </label>
-                    <label class="custom-switch mt-2">
-                      <%= f.check_box :vibe, class: 'custom-switch-input' %>
-                      <span class="custom-switch-indicator"></span>
-                      <span class="custom-switch-description">Pop</span>
-                    </label>
-                    <label class="custom-switch mt-2">
-                      <%= f.check_box :vibe, class: 'custom-switch-input' %>
-                      <span class="custom-switch-indicator"></span>
-                      <span class="custom-switch-description">Electronique</span>
-                    </label>
-                </div>
-              </div>
-
-
-            <!-- Form for Preferences -->
-            <div class="from-group">
-              <div class="control-label mt-2"><h6> Préférences </h6> </div>
-                  <label class="custom-switch mt-2">
-                    <%= f.check_box :wifi, class: 'custom-switch-input' %>
-                    <span class="custom-switch-indicator"></span>
-                    <span class="custom-switch-description">Wifi</span>
-                  </label>
-                  <label class="custom-switch mt-2">
-                    <%= f.check_box :price, class: 'custom-switch-input' %>
-                    <span class="custom-switch-indicator"></span>
-                    <span class="custom-switch-description">Prix</span>
-                  </label>
-                  <label class="custom-switch mt-2">
-                    <%= f.check_box :e_outlet, class: 'custom-switch-input' %>
-                    <span class="custom-switch-indicator"></span>
-                    <span class="custom-switch-description">Prise électrique</span>
-                  </label>
-                  <label class="custom-switch mt-2">
-                    <%= f.check_box :access_handi, class: 'custom-switch-input' %>
-                    <span class="custom-switch-indicator"></span>
-                    <span class="custom-switch-description">Acces personne à mobilité réduite</span>
-                  </label>
-                  <label class="custom-switch mt-2">
-                    <%= f.check_box :wifi, class: 'custom-switch-input' %>
-                    <span class="custom-switch-indicator"></span>
-                    <span class="custom-switch-description">Vegan</span>
-                  </label>
-              </div>
-            </div>
-
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!---Btn with some css
-
-
-            <div class="row justify-content-center">
-  <div class="actions">
-    <%= f.submit "Update", class: 'btn btn-success'%>
-  </div>
+  <div>
+<%= f.label "first_name" %>
+<%= f.text_field :first_name %>
 </div>
-<div class="row justify-content-center">
-  <div class="actions">
-    <h3 class="mt-2">Supprimer mon compte</h3>
-
-    <p>Insatisfait? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class: 'btn btn-danger'%></p>
-
-    <%= link_to "Back", :back %>
-
-  </div>
+<div>
+<%= f.label "last_name" %>
+<%= f.text_field :last_name %>
 </div>
---->
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <h3> Address </h3>
+
+ <%= f.fields_for :address_attributes do |user_address_form| %>
+ <%= user_address_form.text_field :address_number, class: "form-control", placeholder: "Address_number" %>
+ <%= user_address_form.text_field :address_main, class: "form-control", placeholder: "Address_main" %>
+ <%= user_address_form.text_field :address_complement_1, class: "form-control", placeholder: "Address_complement_1" %>
+ <%= user_address_form.text_field :address_complement_2, class: "form-control", placeholder: "Address_complement_2" %>
+ <%= user_address_form.text_field :city, class: "form-control", placeholder: "City" %>
+ <%= user_address_form.text_field :postal_code, class: "form-control", placeholder: "Postal_code" %>
+ <%= user_address_form.text_field :country, class: "form-control", placeholder: "Country" %>
+
+<% end %>
+
+
+ <div>
+<%= f.label "wifi" %>
+<%= f.check_box :wifi %>
+</div>
+<div>
+<%= f.label 'price' %>
+<%= f.check_box :price %>
+</div>
+<div>
+<%= f.label 'e_outlet' %>
+<%= f.check_box :e_outlet%>
+</div>
+
+<div>
+<%= f.label 'access_handi' %>
+<%= f.check_box :access_handi %>
+</div>
+<div>
+<%= f.label 'vibe'%>
+
+    <label class="checkbox-inline">
+      <%= f.check_box :vibe %>Hip Hop
+    </label>
+    <label class="checkbox-inline">
+      <%= f.check_box :vibe %>Lounge
+    </label>
+    <label class="checkbox-inline">
+      <%= f.check_box :vibe %>Classic
+    </label>
+     <label class="checkbox-inline">
+      <%= f.check_box :vibe %>Exotic 
+    </label>
+     <label class="checkbox-inline">
+      <%= f.check_box :vibe %>Pop
+    </label>
+     <label class="checkbox-inline">
+      <%= f.check_box :vibe %>Electronic
+    </label>
+  
+</div>
+
+<div>
+<%= f.label 'vegan' %>
+<%= f.check_box :vegan %>
+</div>
+
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
-
+<% end %>
 
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
-
-
-<% end %>
