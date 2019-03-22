@@ -72,28 +72,7 @@
 <%= f.check_box :access_handi %>
 </div>
 <div>
-<%= f.label 'vibe'%>
-
-    <label class="checkbox-inline">
-      <%= f.check_box :vibe %>Hip Hop
-    </label>
-    <label class="checkbox-inline">
-      <%= f.check_box :vibe %>Lounge
-    </label>
-    <label class="checkbox-inline">
-      <%= f.check_box :vibe %>Classic
-    </label>
-     <label class="checkbox-inline">
-      <%= f.check_box :vibe %>Exotic 
-    </label>
-     <label class="checkbox-inline">
-      <%= f.check_box :vibe %>Pop
-    </label>
-     <label class="checkbox-inline">
-      <%= f.check_box :vibe %>Electronic
-    </label>
-  
-</div>
+<%= f.select 'vibe', ['Hip Hop', 'Lounge', 'Classic', 'Exotic', 'Pop', 'Electronic']%>
 
 <div>
 <%= f.label 'vegan' %>

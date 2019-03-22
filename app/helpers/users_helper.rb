@@ -42,5 +42,20 @@ module UsersHelper
             return "cheap"
         end
     end
+    def boolean_vibe
+        if current_user.vibe == "hip_hop"
+            return "Hip Hop"
+        elsif current_user.vibe == "lounge"
+                return "Lounge"
+        elsif current_user.vibe == "classic"
+                    return "Classic"
+        elsif current_user.vibe == "exotic"
+                        return "Exotic"
+        elsif current_user.vibe == "pop"
+                            return "Pop"
+        elsif current_user.vibe == "electronic"
+                                return "Electronic"
+    end
+end
 
 end
