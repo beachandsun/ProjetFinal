@@ -418,3 +418,35 @@ footer h4 {
 .member-info h4, .member-info span {
   color: #002259 !important
 }
+
+
+
+// ADMIN DASHBOARD //
+.place-card .card-title {
+  font-size: 1.3rem;
+}
+
+.place-card .edit-icon,
+.place-card .delete-icon {
+  width: 34px;
+  height: 34px;
+  margin: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.place-card .edit-icon {
+  border: 2px solid #354ded;
+}
+
+.place-card .edit-icon i {
+  color: #354ded;
+  font-size: 18px;
+}
+
+.place-card .delete-icon {
+  border: 2px solid #354ded;
+}
+
+.place-card .delete-icon i {
+  color: #354ded;
+  font-size: 18px;
+}

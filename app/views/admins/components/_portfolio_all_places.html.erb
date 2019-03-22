@@ -1,26 +1,24 @@
-<div class="row matches">
+<div class="row all-places">
   <% @places.each do |place| %>
 
-  <div class="col-lg-4 col-md-6 matches-item d-flex">
+  <div class="col-lg-4 col-md-6 place-card d-flex">
 
     <div class="card text-white">
       <%= image_tag "coffee-shop.jpg", class:"d-block w-100 card-bg-img" %>
       <div class="place-infos">
-        <div class="col-6 place-title">
           <h5 class="card-title"><%= link_to place.name, place_path(place.id) %></h5>
-        </div>
       </div>
     </div>
 
     <div>
       <div class="icons-box">
-        <div class="icon">
-          <i class="fas fa-wifi"></i>
+        <div class="icon edit-icon">
+          <i class="fas fa-pencil-alt"></i>
         </div>
       </div>
       <div class="icons-box">
-        <div class="icon">
-          <i class="fas fa-wifi"></i>
+        <div class="icon delete-icon">
+          <i class="fas fa-times"></i>
         </div>
       </div>
     </div>
