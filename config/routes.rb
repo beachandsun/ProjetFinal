@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'statics/team'
   devise_for :users, :controllers => { :registrations => "registrations" }
   root 'home#index'
 
