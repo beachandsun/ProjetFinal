@@ -1,8 +1,4 @@
-
-
-
-
- <section class="mt-5">
+<section class="mt-5">
   <div class="container">
     <div class="row justify-content-center">
       <div class="card">
@@ -11,13 +7,11 @@
           <h5 class="card-title">Edit <%= resource_name.to_s.humanize %></h5>
           <%# <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> %>
           <%# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> %>
-              <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-              <%= render "devise/shared/error_messages", resource: resource %>            <div class="field form-group">
 
             </div>
             <div class="field form-group">
-              <%= f.label "Prénom" %>
-              <%= f.text_field :first_name, class: "form-control" %>
+                <%= f.label "Prénom" %>
+                <%= f.text_field :first_name, class: "form-control" %>
             </div>
 
             <div class="field form-group">
@@ -66,39 +60,39 @@
             </div>
             <!--- from for vibe --->
             <div class="from-group">
-              <div class="control-label"><h6> Vibe </h6> </div>
-                  <label class="custom-switch mt-2">
-                    <%= f.check_box :vibe, class: 'custom-switch-input' %>
-                    <span class="custom-switch-indicator"></span>
-                    <span class="custom-switch-description">Hip hop</span>
-                  </label>
-                  <label class="custom-switch mt-2">
-                    <%= f.check_box :vibe, class: 'custom-switch-input' %>
-                    <span class="custom-switch-indicator"></span>
-                    <span class="custom-switch-description">Lounge</span>
-                  </label>
-                  <label class="custom-switch mt-2">
-                    <%= f.check_box :vibe, class: 'custom-switch-input' %>
-                    <span class="custom-switch-indicator"></span>
-                    <span class="custom-switch-description">Classique</span>
-                  </label>
-                  <label class="custom-switch mt-2">
-                    <%= f.check_box :vibe, class: 'custom-switch-input' %>
-                    <span class="custom-switch-indicator"></span>
-                    <span class="custom-switch-description">Exotique</span>
-                  </label>
-                  <label class="custom-switch mt-2">
-                    <%= f.check_box :vibe, class: 'custom-switch-input' %>
-                    <span class="custom-switch-indicator"></span>
-                    <span class="custom-switch-description">Pop</span>
-                  </label>
-                  <label class="custom-switch mt-2">
-                    <%= f.check_box :vibe, class: 'custom-switch-input' %>
-                    <span class="custom-switch-indicator"></span>
-                    <span class="custom-switch-description">Electronique</span>
-                  </label>
+                <div class="control-label"><h6> Vibe </h6> </div>
+                    <label class="custom-switch mt-2">
+                      <%= f.check_box :vibe, class: 'custom-switch-input' %>
+                      <span class="custom-switch-indicator"></span>
+                      <span class="custom-switch-description">Hip hop</span>
+                    </label>
+                    <label class="custom-switch mt-2">
+                      <%= f.check_box :vibe, class: 'custom-switch-input' %>
+                      <span class="custom-switch-indicator"></span>
+                      <span class="custom-switch-description">Lounge</span>
+                    </label>
+                    <label class="custom-switch mt-2">
+                      <%= f.check_box :vibe, class: 'custom-switch-input' %>
+                      <span class="custom-switch-indicator"></span>
+                      <span class="custom-switch-description">Classique</span>
+                    </label>
+                    <label class="custom-switch mt-2">
+                      <%= f.check_box :vibe, class: 'custom-switch-input' %>
+                      <span class="custom-switch-indicator"></span>
+                      <span class="custom-switch-description">Exotique</span>
+                    </label>
+                    <label class="custom-switch mt-2">
+                      <%= f.check_box :vibe, class: 'custom-switch-input' %>
+                      <span class="custom-switch-indicator"></span>
+                      <span class="custom-switch-description">Pop</span>
+                    </label>
+                    <label class="custom-switch mt-2">
+                      <%= f.check_box :vibe, class: 'custom-switch-input' %>
+                      <span class="custom-switch-indicator"></span>
+                      <span class="custom-switch-description">Electronique</span>
+                    </label>
+                </div>
               </div>
-            </div>
 
 
             <!-- Form for Preferences -->

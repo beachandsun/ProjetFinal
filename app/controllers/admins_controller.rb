@@ -6,6 +6,7 @@ class AdminsController < ApplicationController
 
   def index
     @admin = current_user
+    @places = Place.all
   end
 
   def show
