@@ -19,10 +19,14 @@
         <div class="col-lg-6 portfolio-item filter-close">
           <div class="portfolio-wrap">
             <div class="card">
+              <% if placeCloser.pictures.attached? %>
+                <%= image_tag placeCloser.pictures.first, alt: 'picture', class:"d-block w-100 card-img-top"  %>
+              <% else %>
                 <%= image_tag "coffee-shop.jpg", class:"d-block w-100 card-img-top" %>
+              <% end %>
               <div class="card-body">
-                  <h5 class="card-title"><%= @places.first.name %></h5>
-                <p class="card-text"><%= @places.first.description.truncate(30) %></p>
+                  <h5 class="card-title"><%= placeCloser.name %></h5>
+                <p class="card-text"><%= placeCloser.description.truncate(30) %></p>
               </div>
             </div>
           </div>
@@ -31,10 +35,14 @@
         <div class="col-lg-6 portfolio-item filter-liked">
           <div class="portfolio-wrap">
             <div class="card">
-              <%= image_tag "coffee-shop.jpg", class:"d-block w-100 card-img-top" %>
+                <% if placeTopFav.pictures.attached? %>
+                  <%= image_tag placeCloser.pictures.first, alt: 'picture', class:"d-block w-100 card-img-top"  %>
+                <% else %>
+                  <%= image_tag "coffee-shop.jpg", class:"d-block w-100 card-img-top" %>
+                <% end %>
               <div class="card-body">
-                  <h5 class="card-title"><%= @places.last.name %></h5>
-                <p class="card-text"><%= @places.last.description.truncate(70) %></p>
+                  <h5 class="card-title"><%= placeTopFav.name %></h5>
+                <p class="card-text"><%= placeTopFav.description.truncate(70) %></p>
               </div>
             </div>
           </div>
