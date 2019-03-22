@@ -204,6 +204,11 @@ footer h4 {
   max-height: 500px;
 }
 
+.carousel-place-show .carousel-inner {
+  max-height: 500px !important;
+  opacity: 0.80 !important;
+}
+
 .header-info {
   width: 100%;
   position: absolute;
@@ -241,7 +246,7 @@ footer h4 {
 }
 
 .btn-fav:hover {
-  background: #fff;
+  background: #f8eaef;
   border: 2px solid #b61251;
   color: #b61251;
 }
@@ -294,9 +299,6 @@ footer h4 {
   background: #fff;
 }
 
-.carousel-place-show .carousel-inner {
-  max-height: 500px !important;
-}
 
 
 //SECTION DESCRIPTION
