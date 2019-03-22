@@ -25,6 +25,69 @@
  */
 
 
+// GENERAL //
+
+body {
+  color: #494c4f !important;
+  background-color: #fff !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #494c4f !important ;
+}
+
+.app-content {
+  flex: 1 0 auto !important;
+}
+
+.main-nav a {
+  color: #002259 !important;
+}
+
+.main-nav a:hover {
+  color: #354ded !important;
+}
+
+.mobile-nav a {
+  display: block;
+  position: relative;
+  color: #fff;
+  padding: 15px 25px !important;
+  font-weight: 500;
+  font-size: 20px !important;
+}
+
+footer {
+  flex-shrink: 0 !important;
+  position: static !important;
+}
+
+footer h3 {
+  color: #fff !important;
+}
+
+footer h4 {
+  padding-top: 10px !important;
+  color: #fff !important;
+}
+
+.footer-links ul a:hover {
+  color: #354ded !important;
+}
+
+.footer-contact a {
+  color: #fff;
+}
+
+.footer-contact a:hover {
+  color: #354ded !important;
+}
+
+
+
 // PLACES#INDEX //
 .matches-index h1 {
   text-align: center;
@@ -144,7 +207,7 @@
 .header-info {
   width: 100%;
   position: absolute;
-  top: 55%;
+  top: 65%;
   z-index: 3;
 }
 
@@ -186,8 +249,10 @@
 .admin-header-btn {
   width: 100%;
   position: absolute;
-  top: 80%;
+  top: 85%;
   z-index: 3;
+  justify-content: flex-end;
+  margin: 0 !important;
 }
 
 .btn-edit,
@@ -200,7 +265,7 @@
   padding: 10px 32px;
   border-radius: 50px;
   transition: 0.5s;
-  margin: 0 20px 20px 0;
+  margin: 0 20px 0 0;
 }
 
 .btn-edit {
@@ -213,20 +278,20 @@
   background: none;
   border-color: #18b466;
   color: #18b466;
-  background: rgba(255, 255, 255, 0.5);
+  background: #fff;
 }
 
 .btn-delete {
-  background: #b42a18;
-  border: 2px solid #b42a18;
+  background: #d63131;
+  border: 2px solid #d63131;
   color: #fff;
 }
 
 .btn-delete:hover {
   background: none;
-  border-color: #b42a18;
-  color: #b42a18;
-  background: rgba(255, 255, 255, 0.5);
+  border-color: #d63131;
+  color: #d63131;
+  background: #fff;
 }
 
 .carousel-place-show .carousel-inner {
@@ -298,14 +363,10 @@
 
 //SECTION MAP
 
-.aside-header h4{
-  margin-top: 2rem;
-  font-size: 28px;
-  color: #283d50;
-  text-align: center;
-  font-weight: 500;
-}
-.aside-header p{
-  padding: 10px 26px 10px 26px;
-  color: #556877;
+.place-location h4{
+  margin-top: 2rem !important;
+  font-size: 28px !important;
+  color: #283d50 !important;
+  font-weight: 500 !important;
+  padding: 0 0 0 1rem; 
 }

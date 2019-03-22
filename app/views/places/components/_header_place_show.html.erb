@@ -12,20 +12,22 @@
 				<% if like? %>
 					<%= button_to 'supprimer des favoris', place_like_path(@place, current_like_id), class: "btn-fav scrollto", method: :delete %>
 				<% else %>
-					<%= button_to '<i class="fas fa-heart"></i>', place_likes_path(@place), class: "btn-fav scrollto", method: :post %>
+					<%= button_to icon('fas', 'heart'), place_likes_path(@place), class: "btn-fav scrollto", method: :post %>
 				<% end %>
 			</div>
 
 		</div>
 
+		<% if current_user.try(:admin?) %>
 		<div class="row admin-header-btn">
 
-			<div>
-				<a href="#" class="btn-edit scrollto">Modifier les informations</a>
-				<a href="#" class="btn-delete scrollto">Supprimer ce lieu</a>
-			</div>
+				<div>
+					<a href="#" class="btn-edit scrollto">Modifier les informations</a>
+					<a href="#" class="btn-delete scrollto">Supprimer ce lieu</a>
+				</div>
 
 		</div>
+		<% end %>
 
 		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
