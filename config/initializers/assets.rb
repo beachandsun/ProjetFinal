@@ -12,6 +12,7 @@ Rails.application.config.assets.paths << Rails.root.join('vendor/assets')
 Rails.application.config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
 Rails.application.config.assets.precompile += %w( landing.scss landing.js )
 Rails.application.config.assets.precompile += %w( dashboard.scss dashboard.js )
+Rails.application.config.assets.precompile += %w( places.js )
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
