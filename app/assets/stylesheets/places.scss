@@ -155,14 +155,30 @@ footer h4 {
   flex-direction: column;
   text-align: center;
   border-radius: 50%;
-}
-
-.place-infos .icons-box .icon {
   border: 1px solid #354ded;
 }
 
 .place-infos .icons-box .icon i {
   color: #354ded;
+  font-size: 16px;
+}
+
+.place-infos .icons-box-like .icon {
+  float: left;
+  background: #b61251;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #b61251;
+}
+
+.place-infos .icons-box-like .icon i {
+  color: #fff;
   font-size: 16px;
 }
 
@@ -213,9 +229,13 @@ footer h4 {
   max-height: 500px;
 }
 
+.carousel-place-show .carousel {
+  background-color: #000;
+}
+
 .carousel-place-show .carousel-inner {
   max-height: 500px !important;
-  opacity: 0.80 !important;
+  opacity: 0.85 !important;
 }
 
 .header-info {
@@ -380,4 +400,25 @@ footer h4 {
   color: #283d50 !important;
   font-weight: 500 !important;
   padding: 0 0 0 1rem; 
+}
+
+
+
+// TEAM PAGE // 
+
+.team-page .member {
+  padding: 1rem;
+  text-align: center;
+}
+
+.team-page img {
+  border-radius: 50%;
+}
+
+.member-info {
+  margin-top: 1rem;
+}
+
+.member-info h4, .member-info span {
+  color: #002259 !important
 }

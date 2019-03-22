@@ -14,7 +14,7 @@ class AdminsController < ApplicationController
 
   private
   def user_is_admin
-    if current_user.admin?
+    if current_user.try(:admin?)
       puts "L'utilisateur est admin"
     else
       puts "l'utilisateur est un lambda"

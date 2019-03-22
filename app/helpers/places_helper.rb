@@ -7,27 +7,28 @@ module PlacesHelper
         src=\"https://www.google.com/maps/embed/v1/place?key=#{ENV['KEY_GOOGLE_MAP']}&q=#{current_address.latitude},#{current_address.longitude}\" allowfullscreen></iframe>"
     end
 
-    def placesMatch
+    def places_match
         @all_places = Array.new
         @select_places = Array.new
         @tmp_places = Array.new 
 
         store_all_places(@all_places)
+        @tmp_places = @all_places
         keep_wifi_places
         keep_price_places
         keep_eOutlet_places
         keep_access_handi_places
         keep_vibe_places
         keep_vegan_places
-        sort_by_distance(@tmp_places).reverse
+        cut_array(sort_by_distance(@tmp_places).reverse)
       end
     
-      def placeCloser
+      def place_closer
         sort_by_distance(@all_places)
         @all_places.last
       end
     
-      def placeTopFav
+      def place_top_fav
         places_all = Array.new
         store_all_places(places_all)
         places_all.sort_by!{|place| place.liked_count}
@@ -35,6 +36,13 @@ module PlacesHelper
       end
 
       private
+
+      def cut_array(array)
+        if (array.length > 3)
+          return array[0, 3]
+        end
+        return array
+      end
     
       def sort_by_distance(array_of_places)
         array_of_places.sort_by!{ |place| address_of_place(place).bearing_from(address_of_user(current_user))}
@@ -49,9 +57,11 @@ module PlacesHelper
       end
     
       def keep_wifi_places
-        @all_places.each do |place|
-          if ((place.wifi == current_user.wifi) || (!current_user.wifi))
-            @tmp_places.push(place)
+        @tmp_places.each do |place|
+          if ((place.wifi != current_user.wifi) && (current_user.wifi))
+            if (@tmp_places.length > 3)
+              delete_place_from_array(place, @tmp_places)
+            end
           end
         end
         return nil
