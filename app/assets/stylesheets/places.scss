@@ -134,8 +134,13 @@ h1, h2, h3, h4, h5 {
 // PROMOTED PLACES
 
 #portfolio-flters li {
-  background: #f4f9ff;
-  color: #354ded;
+  background: #f4f9ff !important;
+  color: #354ded !important;
+}
+
+#portfolio-flters li:hover {
+  background: #354ded !important;
+  color: #fff !important;
 }
 
 
