@@ -377,3 +377,24 @@ footer h4 {
   font-weight: 500 !important;
   padding: 0 0 0 1rem; 
 }
+
+
+
+// TEAM PAGE // 
+
+.team-page .member {
+  padding: 1rem;
+  text-align: center;
+}
+
+.team-page img {
+  border-radius: 50%;
+}
+
+.member-info {
+  margin-top: 1rem;
+}
+
+.member-info h4, .member-info span {
+  color: #002259 !important
+}
