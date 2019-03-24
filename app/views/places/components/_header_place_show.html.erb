@@ -7,7 +7,7 @@
 				<h2><%= @place.name %></h2>
 			</div>
 
-			<div class="col-4 header-btn">
+			<div class="col-4 header-btn pr-2">
 
 				<% if @like.include?(@place.id) %>
 					<%= button_to 'Supprimer des favoris', place_like_path(@place, current_like_id), class: "btn-fav scrollto", method: :delete %>
@@ -19,12 +19,12 @@
 		</div>
 
 		<% if current_user.try(:admin?) %>
-		<div class="row admin-header-btn">
+		<div class="row admin-header-btn pr-2">
 
-			<div>
-				<%= link_to 'edit', edit_place_path(@place.id), class:"btn btn-success scrollto"%>
-				<a href="#" class="btn-delete scrollto">Supprimer ce lieu</a>
-			</div>
+				<%= link_to 'Modifier', edit_place_path(@place.id), class:"btn btn-edit scrollto"%>
+				<%= form_tag url_for(action: 'destroy'), method: "delete" do%>
+					<%= submit_tag "Supprimer ce lieu", class: 'btn btn-delete'%>
+				<%end%>
 
 		</div>
 		<% end %>
